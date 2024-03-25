@@ -3,26 +3,33 @@
 #include <driver/gpio.h>
 #include "driver/spi_master.h"
 
-// SPI3_HOST
+// define SPI3_HOST / VSPI pins
 #define GPIO_NUM_MOSI 			23
 #define GPIO_NUM_MISO 			19
 #define GPIO_NUM_SCLK 			18
 #define GPIO_NUM_CS    			 5
-
 #define GPIO_NUM_RST  			13
 #define GPIO_NUM_G0   			27
-#define TAG 		  			"RFM9x"
-#define TIMEOUT_RESET			100
 
-// This is the bit in the SPI address that marks it as a write
-#define RH_RF95_REG_VERSION      	0x42
-#define RH_FIFO_TX_BASE_ADDR        0x0e
-#define RH_FIFO_RX_BASE_ADDR        0x0f
+#define TAG 		  			"RFM9x"
+#define WNR_BIT_MASK 			0x80
+#define CLOCK_SPEED_HZ 			5
+#define RH_RF95_REG_VERSION     0x42
+#define RH_RF95_REG_OP_MODE   	0x01
+
+// RegFifoTxBaseAddr specifies the point in memory where the transmit information is stored.
+#define RH_FIFO_TX_BASE_ADDR    0x0e
+// RegFifoRxBaseAddr indicates the point in the data buffer where information
+// will be written to in event of a receive operation.
+#define RH_FIFO_RX_BASE_ADDR    0x0f
+
 
 // function prototypes
 esp_err_t spi_init(void);
 void reset_radio(void);
 int register_read(int reg);
+esp_err_t register_write(int reg, int value);
+uint8_t getOperationMode();
 
 static spi_device_handle_t spi_handle;
 
@@ -30,6 +37,7 @@ void app_main(void)
 {
 	uint8_t version_register;
 	uint8_t result;
+	uint8_t regOpMode;
 
 	spi_init();
 	reset_radio();
@@ -43,6 +51,16 @@ void app_main(void)
 	} else{
 		printf("LoRa radio init failed. Check wiring.\n");
 	}
+
+	printf("Reading operation mode register\n");
+	regOpMode = getOperationMode();
+	printf("RegOpMode: 0x%x\n", regOpMode);
+
+	printf("Writing operation mode register to 0x8 (000 -> SLEEP)\n");
+	register_write(RH_RF95_REG_OP_MODE, 0x8);
+	vTaskDelay(pdMS_TO_TICKS(10));
+	regOpMode = getOperationMode();
+	printf("RegOpMode: 0x%x\n", regOpMode);
 
 }
 
@@ -73,7 +91,7 @@ esp_err_t spi_init(void)
 	assert(ret == ESP_OK);
 
 	spi_device_interface_config_t spi_device_interface_config = {
-		.clock_speed_hz = 5 * 1000 * 1000,
+		.clock_speed_hz = CLOCK_SPEED_HZ * 1000 * 1000,
 		.mode = 0,  // CPOL=0, CPHA=0
 		.queue_size = 1,
 		.spics_io_num = -1,
@@ -99,7 +117,6 @@ void reset_radio(void)
 	ESP_LOGI(TAG, "reseting lora radio. Done.");
 }
 
-
 int register_read(int reg)
 {
    uint8_t buffer_out[2] = { reg, 0xff };
@@ -117,4 +134,32 @@ int register_read(int reg)
    gpio_set_level(GPIO_NUM_CS, 1);
 
    return buffer_in[1];
+}
+
+esp_err_t register_write(int reg, int value)
+{
+	uint8_t buffer_out[2] = { reg | WNR_BIT_MASK, value };
+
+	spi_transaction_t t = {
+		.flags = 0,    // transaction line mode
+		.length = 8 * sizeof(buffer_out),
+		.tx_buffer = buffer_out,
+		.rx_buffer = NULL
+	};
+
+	gpio_set_level(GPIO_NUM_CS, 0);
+	spi_device_transmit(spi_handle, &t);
+	gpio_set_level(GPIO_NUM_CS, 1);
+
+	return ESP_OK;
+}
+/**
+ * Operation of the LoRa Modem
+ * see 4.1.3.1. RegOpMode (01h)
+ * see 4.2.4. Operating Modes in FSK/OOK Mode
+*/
+uint8_t getOperationMode()
+{
+	uint8_t regOpMode = register_read(RH_RF95_REG_OP_MODE);
+	return regOpMode;
 }
