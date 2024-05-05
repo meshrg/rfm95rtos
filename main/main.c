@@ -20,6 +20,7 @@
 */
 #include "esp_log.h"
 #include <string.h>
+#include <inttypes.h>
 #include <driver/gpio.h>
 #include "driver/spi_master.h"
 
@@ -32,7 +33,7 @@
 #define GPIO_NUM_G0   			27
 
 #define TAG 		  			"RFM9x"
-#define WNR_BIT_MASK 			0x80
+#define SPI_WRITE_BIT_MASK 		0x80
 #define CLOCK_SPEED_HZ 			5
 
 // Table 41. Registers Summary
@@ -118,8 +119,17 @@
 // function prototypes
 esp_err_t spi_init(void);
 void reset_radio(void);
+void radio_init(void);
+void check_radio_version(void);
+
 int register_read(int reg);
 esp_err_t register_write(int reg, int value);
+
+void setPreambleLength(uint16_t length);
+uint8_t getPreambleLength();
+void setFrequency(uint32_t frequency);
+uint32_t getFrecuency();
+
 uint8_t getRegOpMode();
 uint8_t getRegOpLoraMode();
 uint8_t setRegOpMode(uint8_t mode);
@@ -129,49 +139,49 @@ static spi_device_handle_t spi_handle;
 
 void app_main(void)
 {
-	uint8_t version_register;
-	uint8_t result;
-	uint8_t regOpMode;
+	// uint8_t regOpMode;
 
 	spi_init();
-	reset_radio();
+	radio_init();
 
-	version_register = RFM9X_42_REG_VERSION;
-	printf("Reading version register: %x\n", version_register);
-	result = register_read(version_register);
-	printf("fetched result is: 0x%x = %i\n", result, result);
-	if (result == RFM9X_42_REG_VERSION_VALUE) {
-		printf("LoRa radio init success\n");
-	} else {
-		printf("LoRa radio init failed. Check wiring.\n");
-	}
+	printf("LoRa radio init done\n");
 
-	// testing setRegOpMode
-	printf("setting sleep mode\n");
-	setRegOpMode(RFM9X_MODE_SLEEP);
-	vTaskDelay(pdMS_TO_TICKS(10));
+	printf("Set frequency to 915 MHz\n");
 
-	// testing getRegOpMode
-	regOpMode = getRegOpMode();
-	printf("RegOpMode: 0x%x\n", regOpMode);
-	vTaskDelay(pdMS_TO_TICKS(10));
+	// set tx power = 23 dBm --- check datasheet
 
-	if (regOpMode != (RFM9X_MODE_SLEEP | RFM9X_LONG_RANGE_MODE)) {
-		printf("Failed to set sleep mode\n");
-	} else {
-		printf("Sleep mode set successfully\n");
-	}
+	// transmit data
+	// function to send data here
 
-	// testing getCurrentOpMode
-	getCurrentOpMode();
+	// receive data
+	// function to receive data here
 
-	// testing getRegOpLoraMode
-	regOpMode = getRegOpLoraMode();
-	if (regOpMode == RFM9X_MODE_SLEEP) {
-		printf("LoRa radio is in sleep mode\n");
-	} else {
-		printf("LoRa radio is not in sleep mode\n");
-	}
+	// // testing setRegOpMode
+	// printf("setting sleep mode\n");
+	// setRegOpMode(RFM9X_MODE_SLEEP);
+	// vTaskDelay(pdMS_TO_TICKS(10));
+
+	// // testing getRegOpMode
+	// regOpMode = getRegOpMode();
+	// printf("RegOpMode: 0x%x\n", regOpMode);
+	// vTaskDelay(pdMS_TO_TICKS(10));
+
+	// if (regOpMode != (RFM9X_MODE_SLEEP | RFM9X_LONG_RANGE_MODE)) {
+	// 	printf("Failed to set sleep mode\n");
+	// } else {
+	// 	printf("Sleep mode set successfully\n");
+	// }
+
+	// // testing getCurrentOpMode
+	// getCurrentOpMode();
+
+	// // testing getRegOpLoraMode
+	// regOpMode = getRegOpLoraMode();
+	// if (regOpMode == RFM9X_MODE_SLEEP) {
+	// 	printf("LoRa radio is in sleep mode\n");
+	// } else {
+	// 	printf("LoRa radio is not in sleep mode\n");
+	// }
 }
 
 esp_err_t spi_init(void)
@@ -222,10 +232,63 @@ void reset_radio(void)
 {
 	ESP_LOGI(TAG, "reseting lora radio. Starting...");
 	gpio_set_level(GPIO_NUM_RST, 0);
-	vTaskDelay(pdMS_TO_TICKS(1));
+	vTaskDelay(pdMS_TO_TICKS(10));
 	gpio_set_level(GPIO_NUM_RST, 1);
-	vTaskDelay(pdMS_TO_TICKS(1));
+	vTaskDelay(pdMS_TO_TICKS(10));
 	ESP_LOGI(TAG, "reseting lora radio. Done.");
+}
+
+void radio_init(void)
+{
+	// check device present
+	check_radio_version();
+
+	// reset radio
+	reset_radio();
+
+    // set sleep mode, so we can also set LORA mode:
+	setRegOpMode(RFM9X_MODE_SLEEP);
+
+    // set up FIFO
+	register_write(RFM9X_0E_REG_FIFO_TX_BASE_ADDR, 0);
+	register_write(RFM9X_0F_REG_FIFO_RX_BASE_ADDR, 0);
+
+	// set stby mode
+	setRegOpMode(RFM9X_MODE_STDBY);
+
+	// settings compatible with RadioHead
+	// mode Bw125Cr45Sf128 with AGC enabled
+	// BW = 125kHz, CR 4/5, SF = 128chips/symbol (SF7)
+	// register_write(RFM9X_1D_REG_MODEM_CONFIG1, 0x72);
+	// register_write(RFM9X_1E_REG_MODEM_CONFIG2, 0x74);
+	// register_write(RFM9X_26_REG_MODEM_CONFIG3, 0x04);
+
+	// set preable length 8
+	setPreambleLength(8);
+
+	// set frequency = 915 MHz
+	setFrequency(915000000);
+	printf("Frequency set to 915 MHz\n");
+	// printf("Frequency: %u\n", getFrecuency());
+	printf("Frequency: %" PRIu32 "\n", getFrecuency());
+
+	// set Tx Power = 13
+}
+
+void check_radio_version(void)
+{
+	uint8_t version_register;
+	uint8_t result;
+
+	version_register = RFM9X_42_REG_VERSION;
+	printf("Reading version register: %x\n", version_register);
+	result = register_read(version_register);
+	printf("fetched result is: 0x%x = %i\n", result, result);
+	if (result == RFM9X_42_REG_VERSION_VALUE) {
+		printf("LoRa radio init success\n");
+	} else {
+		printf("LoRa radio init failed. Check wiring.\n");
+	}
 }
 
 int register_read(int reg)
@@ -249,10 +312,10 @@ int register_read(int reg)
 
 esp_err_t register_write(int reg, int value)
 {
-	uint8_t buffer_out[2] = { reg | WNR_BIT_MASK, value };
+	uint8_t buffer_out[2] = { reg | SPI_WRITE_BIT_MASK, value };
 
 	spi_transaction_t t = {
-		.flags = 0,    // transaction line mode
+		.flags = 0,
 		.length = 8 * sizeof(buffer_out),
 		.tx_buffer = buffer_out,
 		.rx_buffer = NULL
@@ -263,6 +326,46 @@ esp_err_t register_write(int reg, int value)
 	gpio_set_level(GPIO_NUM_CS, 1);
 
 	return ESP_OK;
+}
+
+void setPreambleLength(uint16_t length)
+{
+	register_write(RFM9X_20_REG_PREAMBLE_MSB, (length >> 8) & 0xff);
+	register_write(RFM9X_21_REG_PREAMBLE_LSB, length & 0xff);
+
+	return length;
+}
+
+uint8_t getPreambleLength()
+{
+	uint8_t msb = register_read(RFM9X_20_REG_PREAMBLE_MSB);
+	uint8_t lsb = register_read(RFM9X_21_REG_PREAMBLE_LSB);
+
+	uint16_t length = (msb << 8) | lsb;
+
+	return length;
+}
+
+void setFrequency(uint32_t frequency)
+{
+	uint64_t frf = ((uint64_t)frequency << 19) / RFM9X_FXOSC;
+
+	register_write(RFM9X_06_REG_FRF_MSB, (frf >> 16) & 0xff);
+	register_write(RFM9X_07_REG_FRF_MID, (frf >> 8) & 0xff);
+	register_write(RFM9X_08_REG_FRF_LSB, frf & 0xff);
+}
+
+uint32_t getFrecuency()
+{
+	uint32_t frequency = 0;
+
+	uint8_t msb = register_read(RFM9X_06_REG_FRF_MSB);
+	uint8_t mid = register_read(RFM9X_07_REG_FRF_MID);
+	uint8_t lsb = register_read(RFM9X_08_REG_FRF_LSB);
+
+	frequency = ((msb << 16) | (mid << 8) | lsb) * RFM9X_FXOSC / (1 << 19);
+
+	return frequency;
 }
 
 uint8_t getRegOpMode()
