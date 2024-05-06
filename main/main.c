@@ -12,8 +12,13 @@
  * Based on the RFM9x datasheet, the SX1276/77/78/79 datasheet and the RadioHead library.
  * Uses the RadioHead packet format compatible with the RadioHead Arduino library.
  *
- * Postgraduate Innovation Technology // Posgrado en Ingenieria para la Innovacion Tecnologica
+ * Posgrado en Ingenieria para la Innovacion Tecnologica (PIIT)
  * UAZ. Universidad Autonoma de Zacatecas, Mexico
+ *
+ * TODO:
+ * 	- move register addresses to a header file
+ *  - move function prototypes to a header file
+ *  - move functions to separete driver file
  *
  *
  * Fernando Valderrabano (fernando.valderrabano@uaz.mx)
@@ -25,16 +30,19 @@
 #include "driver/spi_master.h"
 
 // define SPI3_HOST / VSPI pins
-#define GPIO_NUM_MOSI 			23
-#define GPIO_NUM_MISO 			19
-#define GPIO_NUM_SCLK 			18
-#define GPIO_NUM_CS    			 5
-#define GPIO_NUM_RST  			13
-#define GPIO_NUM_G0   			27
+#define GPIO_NUM_MOSI 							23
+#define GPIO_NUM_MISO 							19
+#define GPIO_NUM_SCLK 							18
+#define GPIO_NUM_CS    			 				5
+#define GPIO_NUM_RST  							13
+#define GPIO_NUM_G0   							27
 
-#define TAG 		  			"RFM9x"
-#define SPI_WRITE_BIT_MASK 		0x80
-#define CLOCK_SPEED_HZ 			5
+#define TAG 		  							"RFM9x"
+#define SPI_WRITE_BIT_MASK 						0x80
+// clock speed in MHz
+#define CLOCK_SPEED_MHZ							5
+// +20dBm power
+#define PA_BOOST_PIN 							0x80
 
 // Table 41. Registers Summary
 #define RFM9X_00_REG_FIFO       				0x00
@@ -116,20 +124,33 @@
 // FXOSC = 32MHz
 #define RFM9X_FXOSC 							32000000.0
 
-// function prototypes
+// initialize SPI and radio functions
 esp_err_t spi_init(void);
 void reset_radio(void);
 void radio_init(void);
 void check_radio_version(void);
 
+// register read/write functions
 int register_read(int reg);
 esp_err_t register_write(int reg, int value);
 
+// LoRa radio functions
 void setPreambleLength(uint16_t length);
 uint8_t getPreambleLength();
 void setFrequency(uint32_t frequency);
 uint32_t getFrecuency();
+void setTxPower(int8_t power);
+uint8_t getTxPower();
+void setBandwidth(double bandwidth);
+uint8_t getSignalBandwidth();
+void setCodingRate(uint8_t denominator);
+uint8_t getCodingRate();
+void setImplicitHeaderMode();
+void setExplicitHeaderMode();
+void setSpreadingFactor(uint8_t sf);
+uint8_t getSpreadingFactor();
 
+// operation mode functions
 uint8_t getRegOpMode();
 uint8_t getRegOpLoraMode();
 uint8_t setRegOpMode(uint8_t mode);
@@ -212,7 +233,7 @@ esp_err_t spi_init(void)
 
 	// set SPI device config and mode to CPOL=0, CPHA=0
 	spi_device_interface_config_t spi_device_interface_config = {
-		.clock_speed_hz = CLOCK_SPEED_HZ * 1000 * 1000,
+		.clock_speed_hz = CLOCK_SPEED_MHZ * 1000 * 1000,
 		.mode = 0,
 		.queue_size = 1,
 		.spics_io_num = -1,
@@ -238,6 +259,9 @@ void reset_radio(void)
 	ESP_LOGI(TAG, "reseting lora radio. Done.");
 }
 
+/**
+ * Initialize default radio settings
+ */
 void radio_init(void)
 {
 	// check device present
@@ -246,7 +270,7 @@ void radio_init(void)
 	// reset radio
 	reset_radio();
 
-    // set sleep mode, so we can also set LORA mode:
+    // set sleep mode, so we can also set LoRa mode:
 	setRegOpMode(RFM9X_MODE_SLEEP);
 
     // set up FIFO
@@ -259,9 +283,17 @@ void radio_init(void)
 	// settings compatible with RadioHead
 	// mode Bw125Cr45Sf128 with AGC enabled
 	// BW = 125kHz, CR 4/5, SF = 128chips/symbol (SF7)
-	// register_write(RFM9X_1D_REG_MODEM_CONFIG1, 0x72);
-	// register_write(RFM9X_1E_REG_MODEM_CONFIG2, 0x74);
-	// register_write(RFM9X_26_REG_MODEM_CONFIG3, 0x04);
+	setBandwidth(125e3);
+	printf("Bandwidth set to 125 kHz\n");
+	printf("Reading bandwidth: %d\n", getBandwidth());
+	setCodingRate(5);
+	printf("Coding rate set to 4/5\n");
+	printf("Reading coding rate: %d\n", getCodingRate());
+	setImplicitHeaderMode();
+	printf("Implicit header mode set\n");
+	setSpreadingFactor(7);
+	printf("Spreading factor set to 7\n");
+	printf("Reading spreading factor: %d\n", getSpreadingFactor());
 
 	// set preable length 8
 	setPreambleLength(8);
@@ -269,10 +301,12 @@ void radio_init(void)
 	// set frequency = 915 MHz
 	setFrequency(915000000);
 	printf("Frequency set to 915 MHz\n");
-	// printf("Frequency: %u\n", getFrecuency());
 	printf("Frequency: %" PRIu32 "\n", getFrecuency());
 
 	// set Tx Power = 13
+	setTxPower(13);
+	printf("Tx Power set to 13 dBm\n");
+	printf("Reading tx power: %d\n", getTxPower());
 }
 
 void check_radio_version(void)
@@ -328,14 +362,20 @@ esp_err_t register_write(int reg, int value)
 	return ESP_OK;
 }
 
+/*
+ * Set the preamble length
+*/
 void setPreambleLength(uint16_t length)
 {
+	// write the MSB in case length > 255
 	register_write(RFM9X_20_REG_PREAMBLE_MSB, (length >> 8) & 0xff);
+	// write the LSB
 	register_write(RFM9X_21_REG_PREAMBLE_LSB, length & 0xff);
-
-	return length;
 }
 
+/*
+ * Get the preamble length
+*/
 uint8_t getPreambleLength()
 {
 	uint8_t msb = register_read(RFM9X_20_REG_PREAMBLE_MSB);
@@ -348,6 +388,7 @@ uint8_t getPreambleLength()
 
 void setFrequency(uint32_t frequency)
 {
+	// calculate frf register value
 	uint64_t frf = ((uint64_t)frequency << 19) / RFM9X_FXOSC;
 
 	register_write(RFM9X_06_REG_FRF_MSB, (frf >> 16) & 0xff);
@@ -366,6 +407,165 @@ uint32_t getFrecuency()
 	frequency = ((msb << 16) | (mid << 8) | lsb) * RFM9X_FXOSC / (1 << 19);
 
 	return frequency;
+}
+
+/* set output power in dBm */
+void setTxPower(int8_t power)
+{
+	// set limits
+	if (power > 17) {
+		power = 17;
+	} else if (power < 2) {
+		power = 2;
+	}
+
+	register_write(RFM9X_09_REG_PA_CONFIG, PA_BOOST_PIN | (power - 2));
+}
+
+uint8_t getTxPower()
+{
+	uint8_t regPaConfig = register_read(RFM9X_09_REG_PA_CONFIG);
+
+	uint8_t power = regPaConfig & 0x0f;
+
+	return power + 2;
+}
+
+void setBandwidth(double bandwidth)
+{
+	uint8_t signal_bw;
+	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+
+	if (bandwidth <= 7.8e3) {
+		signal_bw = 0;
+	} else if (bandwidth <= 10.4e3) {
+		signal_bw = 1;
+	} else if (bandwidth <= 15.6e3) {
+		signal_bw = 2;
+	} else if (bandwidth <= 20.8e3) {
+		signal_bw = 3;
+	} else if (bandwidth <= 31.25e3) {
+		signal_bw = 4;
+	} else if (bandwidth <= 41.7e3) {
+		signal_bw = 5;
+	} else if (bandwidth <= 62.5e3) {
+		signal_bw = 6;
+	} else if (bandwidth <= 125e3) {
+		signal_bw = 7;
+	} else if (bandwidth <= 250e3) {
+		signal_bw = 8;
+	} else if (bandwidth <= 500e3) {
+		signal_bw = 9;
+	} else {
+		printf("Invalid bandwidth\n");
+		return;
+	}
+
+	// Bw are in bits 7-4
+	regModemConfig1 = (regModemConfig1 & 0x0f) | (signal_bw << 4);
+
+	register_write(RFM9X_1D_REG_MODEM_CONFIG1, regModemConfig1);
+}
+
+/*
+ * set implicit header mode
+ */
+void setImplicitHeaderMode()
+{
+	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+
+	// set bit 0 = 1
+	regModemConfig1 |= 0x01;
+
+	register_write(RFM9X_1D_REG_MODEM_CONFIG1, regModemConfig1);
+}
+
+/*
+ * set explicit header mode
+ */
+void setExplicitHeaderMode()
+{
+	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+
+	// clear bit 0
+	regModemConfig1 &= 0xfe;
+
+	register_write(RFM9X_1D_REG_MODEM_CONFIG1, regModemConfig1);
+}
+
+/*
+ * Set the spreading factor
+ * param sf, spreading factor from 6 to 12
+ * sf 6 is a special case and uses implicit header mode
+*/
+void setSpreadingFactor(uint8_t sf)
+{
+	uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+
+	if (sf < 6 || sf > 12) {
+		printf("Invalid spreading factor\n");
+		return;
+	}
+
+	// SF are in bits 7-4 (SpreadingFactor of register RegModemConfig2)
+	regModemConfig2 = (regModemConfig2 & 0x0f) | ((sf << 4) & 0xf0);
+
+	register_write(RFM9X_1E_REG_MODEM_CONFIG2, regModemConfig2);
+}
+
+/*
+ * Get the spreading factor
+*/
+uint8_t getSpreadingFactor()
+{
+	uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+
+	uint8_t sf = (regModemConfig2 >> 4) & 0x0f;
+
+	return sf;
+}
+
+/*
+* Get the signal bandwidth number from 0 to 9
+*/
+uint8_t getSignalBandwidth()
+{
+	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+
+	uint8_t bw = (regModemConfig1 >> 4) & 0x0f;
+
+	return bw;
+}
+
+/*
+ * Set the coding rate denominator (4/x)
+*/
+void setCodingRate(uint8_t denominator)
+{
+	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+
+	if (denominator < 5 || denominator > 8) {
+		printf("Invalid denominator\n");
+		return;
+	}
+
+	// CR are in bits 3-1 with an offset of 4
+	// 0xf1 is used to clear the bits 3-1
+	regModemConfig1 = (regModemConfig1 & 0xf1) | ((denominator - 4) << 1);
+
+	register_write(RFM9X_1D_REG_MODEM_CONFIG1, regModemConfig1);
+}
+
+/*
+ * Get the coding rate denominator (4/x)
+*/
+uint8_t getCodingRate()
+{
+	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+
+	uint8_t denominator = (regModemConfig1 >> 1) & 0x07;
+
+	return denominator + 4;
 }
 
 uint8_t getRegOpMode()
