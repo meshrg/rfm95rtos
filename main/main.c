@@ -13,12 +13,16 @@
  * Uses the RadioHead packet format compatible with the RadioHead Arduino library.
  *
  * Posgrado en Ingenieria para la Innovacion Tecnologica (PIIT)
- * UAZ. Universidad Autonoma de Zacatecas, Mexico
+ * Postgraduate in Engineering for Technological Innovation
+ * Project: LoRa Node with ESP32, RFM9x and FreeRTOS
+ *
+ * UAZ. Universidad Autonoma de Zacatecas, Mexico.
  *
  * TODO:
  * 	- move register addresses to a header file
  *  - move function prototypes to a header file
  *  - move functions to separete driver file
+ *  - add more comments and function documentation
  *
  *
  * Fernando Valderrabano (fernando.valderrabano@uaz.mx)
@@ -124,6 +128,11 @@
 // FXOSC = 32MHz
 #define RFM9X_FXOSC 							32000000.0
 
+// RadioHead packet format
+#define RFM9X_HEADER_LEN 						4
+#define RFM9X_BROADCAST_ADDR 					0xff
+#define IRQ_TX_DONE_MASK 						0x08
+
 // initialize SPI and radio functions
 esp_err_t spi_init(void);
 void reset_radio(void);
@@ -149,6 +158,10 @@ void setImplicitHeaderMode();
 void setExplicitHeaderMode();
 void setSpreadingFactor(uint8_t sf);
 uint8_t getSpreadingFactor();
+void enableCRC();
+void disableCRC();
+void send(char *data);
+void waitPacketSent();
 
 // operation mode functions
 uint8_t getRegOpMode();
@@ -157,52 +170,25 @@ uint8_t setRegOpMode(uint8_t mode);
 void getCurrentOpMode();
 
 static spi_device_handle_t spi_handle;
+// static uint8_t _sequenceNumber = 0;
 
 void app_main(void)
 {
 	// uint8_t regOpMode;
 
 	spi_init();
+
 	radio_init();
 
 	printf("LoRa radio init done\n");
 
 	printf("Set frequency to 915 MHz\n");
 
-	// set tx power = 23 dBm --- check datasheet
+	// set tx power = 23 dBm
+	// printf("Set tx power to 23 dBm\n");
+	// setTxPower(23);
 
-	// transmit data
-	// function to send data here
-
-	// receive data
-	// function to receive data here
-
-	// // testing setRegOpMode
-	// printf("setting sleep mode\n");
-	// setRegOpMode(RFM9X_MODE_SLEEP);
-	// vTaskDelay(pdMS_TO_TICKS(10));
-
-	// // testing getRegOpMode
-	// regOpMode = getRegOpMode();
-	// printf("RegOpMode: 0x%x\n", regOpMode);
-	// vTaskDelay(pdMS_TO_TICKS(10));
-
-	// if (regOpMode != (RFM9X_MODE_SLEEP | RFM9X_LONG_RANGE_MODE)) {
-	// 	printf("Failed to set sleep mode\n");
-	// } else {
-	// 	printf("Sleep mode set successfully\n");
-	// }
-
-	// // testing getCurrentOpMode
-	// getCurrentOpMode();
-
-	// // testing getRegOpLoraMode
-	// regOpMode = getRegOpLoraMode();
-	// if (regOpMode == RFM9X_MODE_SLEEP) {
-	// 	printf("LoRa radio is in sleep mode\n");
-	// } else {
-	// 	printf("LoRa radio is not in sleep mode\n");
-	// }
+	send("Hello World");
 }
 
 esp_err_t spi_init(void)
@@ -264,14 +250,15 @@ void reset_radio(void)
  */
 void radio_init(void)
 {
-	// check device present
-	check_radio_version();
-
 	// reset radio
 	reset_radio();
 
+	// check device present
+	check_radio_version();
+
     // set sleep mode, so we can also set LoRa mode:
 	setRegOpMode(RFM9X_MODE_SLEEP);
+	vTaskDelay(pdMS_TO_TICKS(10));
 
     // set up FIFO
 	register_write(RFM9X_0E_REG_FIFO_TX_BASE_ADDR, 0);
@@ -279,34 +266,26 @@ void radio_init(void)
 
 	// set stby mode
 	setRegOpMode(RFM9X_MODE_STDBY);
+	vTaskDelay(pdMS_TO_TICKS(10));
 
 	// settings compatible with RadioHead
 	// mode Bw125Cr45Sf128 with AGC enabled
 	// BW = 125kHz, CR 4/5, SF = 128chips/symbol (SF7)
 	setBandwidth(125e3);
-	printf("Bandwidth set to 125 kHz\n");
-	printf("Reading bandwidth: %d\n", getBandwidth());
 	setCodingRate(5);
-	printf("Coding rate set to 4/5\n");
-	printf("Reading coding rate: %d\n", getCodingRate());
-	setImplicitHeaderMode();
-	printf("Implicit header mode set\n");
 	setSpreadingFactor(7);
-	printf("Spreading factor set to 7\n");
-	printf("Reading spreading factor: %d\n", getSpreadingFactor());
+	enableCRC();
+	setImplicitHeaderMode();
 
-	// set preable length 8
+	// the default is 13 dBm
+	setTxPower(13);
+
+	// default 8 bytes to match radiohead packet
 	setPreambleLength(8);
 
 	// set frequency = 915 MHz
 	setFrequency(915000000);
-	printf("Frequency set to 915 MHz\n");
-	printf("Frequency: %" PRIu32 "\n", getFrecuency());
-
-	// set Tx Power = 13
-	setTxPower(13);
-	printf("Tx Power set to 13 dBm\n");
-	printf("Reading tx power: %d\n", getTxPower());
+	// printf("Frequency: %" PRIu32 "\n", getFrecuency());
 }
 
 void check_radio_version(void)
@@ -315,9 +294,9 @@ void check_radio_version(void)
 	uint8_t result;
 
 	version_register = RFM9X_42_REG_VERSION;
-	printf("Reading version register: %x\n", version_register);
+	printf("Reading register: %x\n", version_register);
 	result = register_read(version_register);
-	printf("fetched result is: 0x%x = %i\n", result, result);
+	printf("fetched result is: 0x%x\n", result);
 	if (result == RFM9X_42_REG_VERSION_VALUE) {
 		printf("LoRa radio init success\n");
 	} else {
@@ -364,6 +343,7 @@ esp_err_t register_write(int reg, int value)
 
 /*
  * Set the preamble length
+ * param length, can be from 6 to 65535 symbols
 */
 void setPreambleLength(uint16_t length)
 {
@@ -437,7 +417,7 @@ void setBandwidth(double bandwidth)
 	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
 
 	if (bandwidth <= 7.8e3) {
-		signal_bw = 0;
+		signal_bw = 0b00000000;
 	} else if (bandwidth <= 10.4e3) {
 		signal_bw = 1;
 	} else if (bandwidth <= 15.6e3) {
@@ -568,6 +548,35 @@ uint8_t getCodingRate()
 	return denominator + 4;
 }
 
+/*
+ * Enable CRC
+*/
+void enableCRC()
+{
+	uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+
+	// set bit 2 = 1
+	regModemConfig2 |= 0x04;
+
+	register_write(RFM9X_1E_REG_MODEM_CONFIG2, regModemConfig2);
+}
+
+/*
+ * Disable CRC
+*/
+void disableCRC()
+{
+	uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+
+	// clear bit 2
+	regModemConfig2 &= 0xfb;
+
+	register_write(RFM9X_1E_REG_MODEM_CONFIG2, regModemConfig2);
+}
+
+/*
+ * Get the current operation mode
+ */
 uint8_t getRegOpMode()
 {
 	uint8_t regOpMode = register_read(RFM9X_01_REG_OP_MODE);
@@ -575,6 +584,9 @@ uint8_t getRegOpMode()
 	return regOpMode;
 }
 
+/*
+ * Set the operation mode
+ */
 uint8_t setRegOpMode(uint8_t mode)
 {
 	switch (mode) {
@@ -595,6 +607,9 @@ uint8_t setRegOpMode(uint8_t mode)
 	return getRegOpMode();
 }
 
+/*
+ * Get the LoRa operation mode
+  */
 uint8_t getRegOpLoraMode()
 {
 	uint8_t regOpMode = getRegOpMode();
@@ -643,5 +658,63 @@ void getCurrentOpMode()
 
 	} else {
 		printf("FSK/OOK mode\n");
+	}
+}
+
+/**
+ * Send data using the LoRa radio module
+ * payload is TO + FROM + ID + FLAGS + message data
+*/
+void send(char *data)
+{
+	// waitPacketSent();
+
+	// // clear FIFO
+	// setRegOpMode(RFM9X_MODE_STDBY);
+	// vTaskDelay(pdMS_TO_TICKS(10));
+
+	// // set FIFO address pointer
+	// register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, 0);
+
+	// // RadioHead packet format
+	// printf("writing header to FIFO\n");
+	// register_write(RFM9X_00_REG_FIFO, RFM9X_BROADCAST_ADDR);
+	// register_write(RFM9X_00_REG_FIFO, RFM9X_BROADCAST_ADDR);
+	// register_write(RFM9X_00_REG_FIFO, RFM9X_BROADCAST_ADDR);
+
+	// // send data
+	// printf("writing data to FIFO\n");
+	// for (int i = 0; i < strlen(data); i++) {
+    //     register_write(RFM9X_00_REG_FIFO, data[i]);
+    // }
+
+	// // set tx mode
+	// if (getRegOpMode() != RFM9X_MODE_TX) {
+	// 	printf("setting tx mode\n");
+	// 	setRegOpMode(RFM9X_MODE_TX);
+	// 	vTaskDelay(pdMS_TO_TICKS(10));
+	// } else {
+	// 	printf("already in tx mode\n");
+	// }
+
+	// // interrupt on TxDone
+	// printf("setting DIO0 to TxDone\n");
+	// register_write(RFM9X_40_REG_DIO_MAPPING1, 0x40);
+
+	// waitPacketSent();
+}
+
+void waitPacketSent()
+{
+	if (getRegOpLoraMode() == RFM9X_MODE_TX) {
+		while (1) {
+			printf("waiting for packet sent\n");
+			uint8_t irqFlags = register_read(RFM9X_12_REG_IRQ_FLAGS);
+			if (irqFlags & 0x08) {
+				break;
+			}
+		}
+		register_write(RFM9X_12_REG_IRQ_FLAGS, IRQ_TX_DONE_MASK);
+		printf("packet sent\n");
 	}
 }
