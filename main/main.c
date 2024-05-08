@@ -130,7 +130,10 @@
 
 // RadioHead packet format
 #define RFM9X_HEADER_LEN 						4
-#define RFM9X_BROADCAST_ADDR 					0xff
+#define RADIOHEAD_HEADER_TO 					0xff
+#define RADIOHEAD_HEADER_FROM 					0xff
+#define RADIOHEAD_HEADER_ID 					0xff
+#define RADIOHEAD_HEADER_FLAGS 					0x00
 #define IRQ_TX_DONE_MASK 						0x08
 
 // initialize SPI and radio functions
@@ -170,27 +173,24 @@ uint8_t setRegOpMode(uint8_t mode);
 void getCurrentOpMode();
 
 static spi_device_handle_t spi_handle;
-// static uint8_t _sequenceNumber = 0;
 
 void app_main(void)
 {
-	// uint8_t regOpMode;
-
 	spi_init();
 
 	radio_init();
 
 	printf("LoRa radio init done\n");
 
-	printf("Set frequency to 915 MHz\n");
+	printf("Set tx power to 23 dBm\n");
+	setTxPower(23);
 
-	// set tx power = 23 dBm
-	// printf("Set tx power to 23 dBm\n");
-	// setTxPower(23);
-
-	send("Hello World");
+	send("Hello LoRa World!");
 }
 
+/*
+ * Initialize the SPI bus and device
+ */
 esp_err_t spi_init(void)
 {
 	esp_err_t ret;
@@ -235,6 +235,9 @@ esp_err_t spi_init(void)
 	return ESP_OK;
 }
 
+/*
+ * Do a radio reset on the RST pin
+ */
 void reset_radio(void)
 {
 	ESP_LOGI(TAG, "reseting lora radio. Starting...");
@@ -277,6 +280,14 @@ void radio_init(void)
 	enableCRC();
 	setImplicitHeaderMode();
 
+	// { 0x72,   0x74,    0x04}
+	uint8_t Bw125Cr45Sf128[] = {0x72, 0x74, 0x04};
+
+	// 1110010
+	register_write(RFM9X_1D_REG_MODEM_CONFIG1, Bw125Cr45Sf128[0]);
+	// register_write(RFM9X_1E_REG_MODEM_CONFIG2, Bw125Cr45Sf128[1]);
+	// register_write(RFM9X_26_REG_MODEM_CONFIG3, Bw125Cr45Sf128[2]);
+
 	// the default is 13 dBm
 	setTxPower(13);
 
@@ -284,10 +295,14 @@ void radio_init(void)
 	setPreambleLength(8);
 
 	// set frequency = 915 MHz
-	setFrequency(915000000);
+	// setFrequency(915000000);
+	setFrequency(915);
 	// printf("Frequency: %" PRIu32 "\n", getFrecuency());
 }
 
+/**
+ * Check the radio version
+ */
 void check_radio_version(void)
 {
 	uint8_t version_register;
@@ -304,6 +319,9 @@ void check_radio_version(void)
 	}
 }
 
+/*
+ * Read a register value
+ */
 int register_read(int reg)
 {
    uint8_t buffer_out[2] = { reg, 0xff };
@@ -323,6 +341,9 @@ int register_read(int reg)
    return buffer_in[1];
 }
 
+/*
+ * Write a value to a register
+ */
 esp_err_t register_write(int reg, int value)
 {
 	uint8_t buffer_out[2] = { reg | SPI_WRITE_BIT_MASK, value };
@@ -366,16 +387,23 @@ uint8_t getPreambleLength()
 	return length;
 }
 
+/*
+ * Set the frequency in MHz
+*/
 void setFrequency(uint32_t frequency)
 {
 	// calculate frf register value
-	uint64_t frf = ((uint64_t)frequency << 19) / RFM9X_FXOSC;
+	frequency = frequency * 1000000.0;
+	uint64_t frf = ((uint64_t) (frequency) << 19) / RFM9X_FXOSC;
 
 	register_write(RFM9X_06_REG_FRF_MSB, (frf >> 16) & 0xff);
 	register_write(RFM9X_07_REG_FRF_MID, (frf >> 8) & 0xff);
 	register_write(RFM9X_08_REG_FRF_LSB, frf & 0xff);
 }
 
+/*
+ * Get the frequency in Hz
+*/
 uint32_t getFrecuency()
 {
 	uint32_t frequency = 0;
@@ -389,7 +417,9 @@ uint32_t getFrecuency()
 	return frequency;
 }
 
-/* set output power in dBm */
+/*
+ * Set output power in dBm
+ */
 void setTxPower(int8_t power)
 {
 	// set limits
@@ -402,6 +432,9 @@ void setTxPower(int8_t power)
 	register_write(RFM9X_09_REG_PA_CONFIG, PA_BOOST_PIN | (power - 2));
 }
 
+/*
+ * Get the tx power in dBm
+ */
 uint8_t getTxPower()
 {
 	uint8_t regPaConfig = register_read(RFM9X_09_REG_PA_CONFIG);
@@ -411,6 +444,9 @@ uint8_t getTxPower()
 	return power + 2;
 }
 
+/*
+ * Set the signal bandwidth
+*/
 void setBandwidth(double bandwidth)
 {
 	uint8_t signal_bw;
@@ -661,60 +697,42 @@ void getCurrentOpMode()
 	}
 }
 
-/**
- * Send data using the LoRa radio module
- * payload is TO + FROM + ID + FLAGS + message data
-*/
+/*
+ * Send a packet to the radio module
+ */
 void send(char *data)
 {
-	// waitPacketSent();
+	uint8_t length = strlen(data);
+	uint8_t identifier = 1;
 
-	// // clear FIFO
-	// setRegOpMode(RFM9X_MODE_STDBY);
-	// vTaskDelay(pdMS_TO_TICKS(10));
+	// set standby mode
+	setRegOpMode(RFM9X_MODE_STDBY);
+	vTaskDelay(pdMS_TO_TICKS(10));
 
-	// // set FIFO address pointer
-	// register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, 0);
+	// set the address pointer in FIFO data buffer
+	register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, 0);
 
-	// // RadioHead packet format
-	// printf("writing header to FIFO\n");
-	// register_write(RFM9X_00_REG_FIFO, RFM9X_BROADCAST_ADDR);
-	// register_write(RFM9X_00_REG_FIFO, RFM9X_BROADCAST_ADDR);
-	// register_write(RFM9X_00_REG_FIFO, RFM9X_BROADCAST_ADDR);
+	printf("writing header to FIFO\n");
+	register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_TO);
+	register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_FROM);
+	register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_ID);
+	register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_FLAGS + identifier++);
 
-	// // send data
-	// printf("writing data to FIFO\n");
-	// for (int i = 0; i < strlen(data); i++) {
-    //     register_write(RFM9X_00_REG_FIFO, data[i]);
-    // }
-
-	// // set tx mode
-	// if (getRegOpMode() != RFM9X_MODE_TX) {
-	// 	printf("setting tx mode\n");
-	// 	setRegOpMode(RFM9X_MODE_TX);
-	// 	vTaskDelay(pdMS_TO_TICKS(10));
-	// } else {
-	// 	printf("already in tx mode\n");
-	// }
-
-	// // interrupt on TxDone
-	// printf("setting DIO0 to TxDone\n");
-	// register_write(RFM9X_40_REG_DIO_MAPPING1, 0x40);
-
-	// waitPacketSent();
-}
-
-void waitPacketSent()
-{
-	if (getRegOpLoraMode() == RFM9X_MODE_TX) {
-		while (1) {
-			printf("waiting for packet sent\n");
-			uint8_t irqFlags = register_read(RFM9X_12_REG_IRQ_FLAGS);
-			if (irqFlags & 0x08) {
-				break;
-			}
-		}
-		register_write(RFM9X_12_REG_IRQ_FLAGS, IRQ_TX_DONE_MASK);
-		printf("packet sent\n");
+	// write the packet to the FIFO
+	for (int i = 0; i < length; i++) {
+		register_write(RFM9X_00_REG_FIFO, data[i]);
 	}
+
+	// set the length of the packet
+	register_write(RFM9X_22_REG_PAYLOAD_LENGTH, length + RFM9X_HEADER_LEN);
+
+	// set TX mode
+	setRegOpMode(RFM9X_MODE_TX);
+	while ((register_read(RFM9X_12_REG_IRQ_FLAGS) & IRQ_TX_DONE_MASK) == 0) {
+        vTaskDelay(pdMS_TO_TICKS(1));
+    }
+
+	// clear the TX_DONE flag
+	register_write(RFM9X_12_REG_IRQ_FLAGS, IRQ_TX_DONE_MASK);
+	printf("\npacket sent\n");
 }
