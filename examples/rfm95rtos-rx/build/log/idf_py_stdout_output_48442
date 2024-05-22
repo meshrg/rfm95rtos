@@ -1,0 +1,474 @@
+[1/13] Performing build step for 'bootloader'
+[1/1] cd /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/esp-idf/esptool_py && /Users/fvalde/.espressif/python_env/idf5.3_py3.11_env/bin/python /Users/fvalde/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/bootloader.bin
+Bootloader binary size 0x6810 bytes. 0x7f0 bytes (7%) free.
+[2/13] No install step for 'bootloader'
+[3/13] Completed 'bootloader'
+[4/13] Linking C static library esp-idf/driver/libdriver.a
+[5/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj 
+/Users/fvalde/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.3-dev-422-ga7fbf452fa\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/config -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main -I/Users/fvalde/esp/esp-idf/components/newlib/platform_include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/esp_additions/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/private_include -I/Users/fvalde/esp/esp-idf/components/heap/include -I/Users/fvalde/esp/esp-idf/components/log/include -I/Users/fvalde/esp/esp-idf/components/soc/include -I/Users/fvalde/esp/esp-idf/components/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/soc/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/platform_port/include -I/Users/fvalde/esp/esp-idf/components/hal/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_rom/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_common/include -I/Users/fvalde/esp/esp-idf/components/esp_system/include -I/Users/fvalde/esp/esp-idf/components/esp_system/port/soc -I/Users/fvalde/esp/esp-idf/components/esp_system/port/include/private -I/Users/fvalde/esp/esp-idf/components/xtensa/esp32/include -I/Users/fvalde/esp/esp-idf/components/xtensa/include -I/Users/fvalde/esp/esp-idf/components/xtensa/deprecated_include -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/include -I/Users/fvalde/esp/esp-idf/components/driver/include -I/Users/fvalde/esp/esp-idf/components/driver/deprecated -I/Users/fvalde/esp/esp-idf/components/driver/analog_comparator/include -I/Users/fvalde/esp/esp-idf/components/driver/dac/include -I/Users/fvalde/esp/esp-idf/components/driver/i2c/include -I/Users/fvalde/esp/esp-idf/components/driver/i2s/include -I/Users/fvalde/esp/esp-idf/components/driver/ledc/include -I/Users/fvalde/esp/esp-idf/components/driver/parlio/include -I/Users/fvalde/esp/esp-idf/components/driver/rmt/include -I/Users/fvalde/esp/esp-idf/components/driver/sdio_slave/include -I/Users/fvalde/esp/esp-idf/components/driver/sdspi/include -I/Users/fvalde/esp/esp-idf/components/driver/sigma_delta/include -I/Users/fvalde/esp/esp-idf/components/driver/temperature_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/twai/include -I/Users/fvalde/esp/esp-idf/components/driver/uart/include -I/Users/fvalde/esp/esp-idf/components/driver/usb_serial_jtag/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/Users/fvalde/esp/esp-idf/components/esp_pm/include -I/Users/fvalde/esp/esp-idf/components/esp_ringbuf/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gpio/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_pcnt/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gptimer/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_spi/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_mcpwm/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_sdmmc/include -I/Users/fvalde/esp/esp-idf/components/sdmmc/include -I/Users/fvalde/esp/esp-idf/components/esp_timer/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/port/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/library -I/Users/fvalde/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -I/Users/fvalde/esp/esp-idf/components/efuse/include -I/Users/fvalde/esp/esp-idf/components/efuse/esp32/include -I/Users/fvalde/esp/esp-idf/components/esp_bootloader_format/include -I/Users/fvalde/esp/esp-idf/components/esp_app_format/include -I/Users/fvalde/esp/esp-idf/components/bootloader_support/include -I/Users/fvalde/esp/esp-idf/components/bootloader_support/bootloader_flash/include -I/Users/fvalde/esp/esp-idf/components/esp_partition/include -I/Users/fvalde/esp/esp-idf/components/app_update/include -I/Users/fvalde/esp/esp-idf/components/esp_mm/include -I/Users/fvalde/esp/esp-idf/components/spi_flash/include -I/Users/fvalde/esp/esp-idf/components/pthread/include -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx=. -fmacro-prefix-map=/Users/fvalde/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj -c /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c: In function 'app_main':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:15:5: error: implicit declaration of function 'spi_init' [-Werror=implicit-function-declaration]
+   15 |     spi_init();
+      |     ^~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:17:9: error: implicit declaration of function 'radio_init' [-Werror=implicit-function-declaration]
+   17 |         radio_init();
+      |         ^~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:22:9: error: implicit declaration of function 'setTxPower' [-Werror=implicit-function-declaration]
+   22 |         setTxPower(23);
+      |         ^~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:26:31: error: 'MAX_PAYLOAD_LENGTH' undeclared (first use in this function)
+   26 |         uint8_t messageBuffer[MAX_PAYLOAD_LENGTH];
+      |                               ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:26:31: note: each undeclared identifier is reported only once for each function it appears in
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:29:17: error: implicit declaration of function 'setRxMode' [-Werror=implicit-function-declaration]
+   29 |                 setRxMode();
+      |                 ^~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:32:37: error: implicit declaration of function 'register_read' [-Werror=implicit-function-declaration]
+   32 |                 uint8_t irq_flags = register_read(RFM9X_12_REG_IRQ_FLAGS);
+      |                                     ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:32:51: error: 'RFM9X_12_REG_IRQ_FLAGS' undeclared (first use in this function)
+   32 |                 uint8_t irq_flags = register_read(RFM9X_12_REG_IRQ_FLAGS);
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:34:33: error: 'IRQ_RX_DONE_MASK' undeclared (first use in this function)
+   34 |                 if (irq_flags & IRQ_RX_DONE_MASK) {
+      |                                 ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:38:63: error: 'RFM9X_1C_REG_HOP_CHANNEL' undeclared (first use in this function)
+   38 |                         uint8_t regHopChannel = register_read(RFM9X_1C_REG_HOP_CHANNEL);
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:60:56: error: 'RFM9X_13_REG_RX_NB_BYTES' undeclared (first use in this function)
+   60 |                         uint8_t length = register_read(RFM9X_13_REG_RX_NB_BYTES);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:64:25: error: implicit declaration of function 'register_write'; did you mean 'i2c_master_write'? [-Werror=implicit-function-declaration]
+   64 |                         register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, register_read(RFM9X_25_REG_FIFO_RX_BYTE_ADDR));
+      |                         ^~~~~~~~~~~~~~
+      |                         i2c_master_write
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:64:40: error: 'RFM9X_0D_REG_FIFO_ADDR_PTR' undeclared (first use in this function)
+   64 |                         register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, register_read(RFM9X_25_REG_FIFO_RX_BYTE_ADDR));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:64:82: error: 'RFM9X_25_REG_FIFO_RX_BYTE_ADDR' undeclared (first use in this function)
+   64 |                         register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, register_read(RFM9X_25_REG_FIFO_RX_BYTE_ADDR));
+      |                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:68:66: error: 'RFM9X_00_REG_FIFO' undeclared (first use in this function)
+   68 |                                 messageBuffer[i] = register_read(RFM9X_00_REG_FIFO);
+      |                                                                  ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:26:17: warning: unused variable 'messageBuffer' [-Wunused-variable]
+   26 |         uint8_t messageBuffer[MAX_PAYLOAD_LENGTH];
+      |                 ^~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+[6/13] Building C object esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj
+FAILED: esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj 
+/Users/fvalde/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.3-dev-422-ga7fbf452fa\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/config -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/include -I/Users/fvalde/esp/esp-idf/components/newlib/platform_include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/esp_additions/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/private_include -I/Users/fvalde/esp/esp-idf/components/heap/include -I/Users/fvalde/esp/esp-idf/components/log/include -I/Users/fvalde/esp/esp-idf/components/soc/include -I/Users/fvalde/esp/esp-idf/components/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/soc/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/platform_port/include -I/Users/fvalde/esp/esp-idf/components/hal/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_rom/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_common/include -I/Users/fvalde/esp/esp-idf/components/esp_system/include -I/Users/fvalde/esp/esp-idf/components/esp_system/port/soc -I/Users/fvalde/esp/esp-idf/components/esp_system/port/include/private -I/Users/fvalde/esp/esp-idf/components/xtensa/esp32/include -I/Users/fvalde/esp/esp-idf/components/xtensa/include -I/Users/fvalde/esp/esp-idf/components/xtensa/deprecated_include -I/Users/fvalde/esp/esp-idf/components/driver/include -I/Users/fvalde/esp/esp-idf/components/driver/deprecated -I/Users/fvalde/esp/esp-idf/components/driver/analog_comparator/include -I/Users/fvalde/esp/esp-idf/components/driver/dac/include -I/Users/fvalde/esp/esp-idf/components/driver/i2c/include -I/Users/fvalde/esp/esp-idf/components/driver/i2s/include -I/Users/fvalde/esp/esp-idf/components/driver/ledc/include -I/Users/fvalde/esp/esp-idf/components/driver/parlio/include -I/Users/fvalde/esp/esp-idf/components/driver/rmt/include -I/Users/fvalde/esp/esp-idf/components/driver/sdio_slave/include -I/Users/fvalde/esp/esp-idf/components/driver/sdspi/include -I/Users/fvalde/esp/esp-idf/components/driver/sigma_delta/include -I/Users/fvalde/esp/esp-idf/components/driver/temperature_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/twai/include -I/Users/fvalde/esp/esp-idf/components/driver/uart/include -I/Users/fvalde/esp/esp-idf/components/driver/usb_serial_jtag/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/Users/fvalde/esp/esp-idf/components/esp_pm/include -I/Users/fvalde/esp/esp-idf/components/esp_ringbuf/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gpio/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_pcnt/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gptimer/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_spi/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_mcpwm/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_sdmmc/include -I/Users/fvalde/esp/esp-idf/components/sdmmc/include -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx=. -fmacro-prefix-map=/Users/fvalde/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj -MF esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj.d -o esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj -c /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'spi_init':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:50:24: error: 'GPIO_NUM_RST' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   50 |         gpio_reset_pin(GPIO_NUM_RST);
+      |                        ^~~~~~~~~~~~
+      |                        GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:50:24: note: each undeclared identifier is reported only once for each function it appears in
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:54:24: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+   54 |         gpio_reset_pin(GPIO_NUM_CS);
+      |                        ^~~~~~~~~~~
+      |                        GPIO_NUM_39
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:59:26: error: 'GPIO_NUM_MISO' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   59 |         .miso_io_num   = GPIO_NUM_MISO,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:60:26: error: 'GPIO_NUM_MOSI' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   60 |         .mosi_io_num   = GPIO_NUM_MOSI,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:61:26: error: 'GPIO_NUM_SCLK' undeclared (first use in this function); did you mean 'GPIO_NUM_NC'?
+   61 |         .sclk_io_num   = GPIO_NUM_SCLK,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_NC
+In file included from /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:32:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:68:18: error: 'TAG' undeclared (first use in this function)
+   68 |         ESP_LOGI(TAG, "spi_bus_initialize=%d",ret);
+      |                  ^~~
+/Users/fvalde/esp/esp-idf/components/log/include/esp_log.h:436:81: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                 ^~~
+/Users/fvalde/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:68:9: note: in expansion of macro 'ESP_LOGI'
+   68 |         ESP_LOGI(TAG, "spi_bus_initialize=%d",ret);
+      |         ^~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:73:35: error: 'CLOCK_SPEED_MHZ' undeclared (first use in this function)
+   73 |                 .clock_speed_hz = CLOCK_SPEED_MHZ * 1000 * 1000,
+      |                                   ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'reset_radio':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:94:18: error: 'TAG' undeclared (first use in this function)
+   94 |         ESP_LOGI(TAG, "reseting lora radio. Starting...");
+      |                  ^~~
+/Users/fvalde/esp/esp-idf/components/log/include/esp_log.h:436:81: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                 ^~~
+/Users/fvalde/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:94:9: note: in expansion of macro 'ESP_LOGI'
+   94 |         ESP_LOGI(TAG, "reseting lora radio. Starting...");
+      |         ^~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:95:24: error: 'GPIO_NUM_RST' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   95 |         gpio_set_level(GPIO_NUM_RST, 0);
+      |                        ^~~~~~~~~~~~
+      |                        GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'radio_init':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:111:9: error: implicit declaration of function 'check_radio_version' [-Werror=implicit-function-declaration]
+  111 |         check_radio_version();
+      |         ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:114:9: error: implicit declaration of function 'setRegOpMode' [-Werror=implicit-function-declaration]
+  114 |         setRegOpMode(RFM9X_MODE_SLEEP);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:114:22: error: 'RFM9X_MODE_SLEEP' undeclared (first use in this function)
+  114 |         setRegOpMode(RFM9X_MODE_SLEEP);
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:118:9: error: implicit declaration of function 'register_write'; did you mean 'i2c_master_write'? [-Werror=implicit-function-declaration]
+  118 |         register_write(RFM9X_0E_REG_FIFO_TX_BASE_ADDR, 0);
+      |         ^~~~~~~~~~~~~~
+      |         i2c_master_write
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:118:24: error: 'RFM9X_0E_REG_FIFO_TX_BASE_ADDR' undeclared (first use in this function)
+  118 |         register_write(RFM9X_0E_REG_FIFO_TX_BASE_ADDR, 0);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:119:24: error: 'RFM9X_0F_REG_FIFO_RX_BASE_ADDR' undeclared (first use in this function)
+  119 |         register_write(RFM9X_0F_REG_FIFO_RX_BASE_ADDR, 0);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:122:22: error: 'RFM9X_MODE_STDBY' undeclared (first use in this function)
+  122 |         setRegOpMode(RFM9X_MODE_STDBY);
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:139:9: error: implicit declaration of function 'setBandwidth' [-Werror=implicit-function-declaration]
+  139 |         setBandwidth(125e3);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:140:9: error: implicit declaration of function 'setCodingRate' [-Werror=implicit-function-declaration]
+  140 |         setCodingRate(5);
+      |         ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:141:9: error: implicit declaration of function 'setSpreadingFactor' [-Werror=implicit-function-declaration]
+  141 |         setSpreadingFactor(7);
+      |         ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:142:9: error: implicit declaration of function 'enableCRC' [-Werror=implicit-function-declaration]
+  142 |         enableCRC();
+      |         ^~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:143:9: error: implicit declaration of function 'setExplicitHeaderMode' [-Werror=implicit-function-declaration]
+  143 |         setExplicitHeaderMode();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:146:9: error: implicit declaration of function 'setTxPower' [-Werror=implicit-function-declaration]
+  146 |         setTxPower(13);
+      |         ^~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:149:9: error: implicit declaration of function 'setPreambleLength' [-Werror=implicit-function-declaration]
+  149 |         setPreambleLength(8);
+      |         ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:152:9: error: implicit declaration of function 'setFrequency' [-Werror=implicit-function-declaration]
+  152 |         setFrequency(915);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:153:44: error: implicit declaration of function 'getFrecuency' [-Werror=implicit-function-declaration]
+  153 |         printf("Frequency: %" PRIu32 "\n", getFrecuency());
+      |                                            ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:153:16: error: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Werror=format=]
+  153 |         printf("Frequency: %" PRIu32 "\n", getFrecuency());
+      |                ^~~~~~~~~~~~~~              ~~~~~~~~~~~~~~
+      |                                            |
+      |                                            int
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:156:31: error: implicit declaration of function 'register_read' [-Werror=implicit-function-declaration]
+  156 |         uint8_t current_reg = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                               ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:156:45: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  156 |         uint8_t current_reg = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:158:37: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  158 |         current_reg = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:160:37: error: 'RFM9X_26_REG_MODEM_CONFIG3' undeclared (first use in this function)
+  160 |         current_reg = register_read(RFM9X_26_REG_MODEM_CONFIG3);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:167:6: warning: conflicting types for 'check_radio_version'; have 'void(void)'
+  167 | void check_radio_version(void)
+      |      ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:111:9: note: previous implicit declaration of 'check_radio_version' with type 'void(void)'
+  111 |         check_radio_version();
+      |         ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'check_radio_version':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:172:28: error: 'RFM9X_42_REG_VERSION' undeclared (first use in this function)
+  172 |         version_register = RFM9X_42_REG_VERSION;
+      |                            ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:176:23: error: 'RFM9X_42_REG_VERSION_VALUE' undeclared (first use in this function)
+  176 |         if (result == RFM9X_42_REG_VERSION_VALUE) {
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'register_read':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:198:19: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+  198 |    gpio_set_level(GPIO_NUM_CS, 0);
+      |                   ^~~~~~~~~~~
+      |                   GPIO_NUM_39
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'register_write':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:210:41: error: 'SPI_WRITE_BIT_MASK' undeclared (first use in this function)
+  210 |         uint8_t buffer_out[2] = { reg | SPI_WRITE_BIT_MASK, value };
+      |                                         ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:219:24: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+  219 |         gpio_set_level(GPIO_NUM_CS, 0);
+      |                        ^~~~~~~~~~~
+      |                        GPIO_NUM_39
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:230:6: warning: conflicting types for 'setPreambleLength'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  230 | void setPreambleLength(uint16_t length)
+      |      ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:149:9: note: previous implicit declaration of 'setPreambleLength' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  149 |         setPreambleLength(8);
+      |         ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setPreambleLength':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:233:24: error: 'RFM9X_20_REG_PREAMBLE_MSB' undeclared (first use in this function)
+  233 |         register_write(RFM9X_20_REG_PREAMBLE_MSB, (length >> 8) & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:235:24: error: 'RFM9X_21_REG_PREAMBLE_LSB' undeclared (first use in this function)
+  235 |         register_write(RFM9X_21_REG_PREAMBLE_LSB, length & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getPreambleLength':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:243:37: error: 'RFM9X_20_REG_PREAMBLE_MSB' undeclared (first use in this function)
+  243 |         uint8_t msb = register_read(RFM9X_20_REG_PREAMBLE_MSB);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:244:37: error: 'RFM9X_21_REG_PREAMBLE_LSB' undeclared (first use in this function)
+  244 |         uint8_t lsb = register_read(RFM9X_21_REG_PREAMBLE_LSB);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:254:6: warning: conflicting types for 'setFrequency'; have 'void(uint32_t)' {aka 'void(long unsigned int)'}
+  254 | void setFrequency(uint32_t frequency)
+      |      ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:152:9: note: previous implicit declaration of 'setFrequency' with type 'void(uint32_t)' {aka 'void(long unsigned int)'}
+  152 |         setFrequency(915);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setFrequency':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:258:57: error: 'RFM9X_FXOSC' undeclared (first use in this function)
+  258 |         uint64_t frf = ((uint64_t) (frequency) << 19) / RFM9X_FXOSC;
+      |                                                         ^~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:260:24: error: 'RFM9X_06_REG_FRF_MSB' undeclared (first use in this function)
+  260 |         register_write(RFM9X_06_REG_FRF_MSB, (frf >> 16) & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:261:24: error: 'RFM9X_07_REG_FRF_MID' undeclared (first use in this function)
+  261 |         register_write(RFM9X_07_REG_FRF_MID, (frf >> 8) & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:262:24: error: 'RFM9X_08_REG_FRF_LSB' undeclared (first use in this function)
+  262 |         register_write(RFM9X_08_REG_FRF_LSB, frf & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:268:10: error: conflicting types for 'getFrecuency'; have 'uint32_t()' {aka 'long unsigned int()'}
+  268 | uint32_t getFrecuency()
+      |          ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:153:44: note: previous implicit declaration of 'getFrecuency' with type 'int()'
+  153 |         printf("Frequency: %" PRIu32 "\n", getFrecuency());
+      |                                            ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getFrecuency':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:272:37: error: 'RFM9X_06_REG_FRF_MSB' undeclared (first use in this function)
+  272 |         uint8_t msb = register_read(RFM9X_06_REG_FRF_MSB);
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:273:37: error: 'RFM9X_07_REG_FRF_MID' undeclared (first use in this function)
+  273 |         uint8_t mid = register_read(RFM9X_07_REG_FRF_MID);
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:274:37: error: 'RFM9X_08_REG_FRF_LSB' undeclared (first use in this function)
+  274 |         uint8_t lsb = register_read(RFM9X_08_REG_FRF_LSB);
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:276:56: error: 'RFM9X_FXOSC' undeclared (first use in this function)
+  276 |         frequency = ((msb << 16) | (mid << 8) | lsb) * RFM9X_FXOSC / (1 << 19);
+      |                                                        ^~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:284:6: warning: conflicting types for 'setTxPower'; have 'void(int8_t)' {aka 'void(signed char)'}
+  284 | void setTxPower(int8_t power)
+      |      ^~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:146:9: note: previous implicit declaration of 'setTxPower' with type 'void(int8_t)' {aka 'void(signed char)'}
+  146 |         setTxPower(13);
+      |         ^~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setTxPower':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:293:24: error: 'RFM9X_09_REG_PA_CONFIG' undeclared (first use in this function)
+  293 |         register_write(RFM9X_09_REG_PA_CONFIG, PA_BOOST_PIN | (power - 2));
+      |                        ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:293:48: error: 'PA_BOOST_PIN' undeclared (first use in this function)
+  293 |         register_write(RFM9X_09_REG_PA_CONFIG, PA_BOOST_PIN | (power - 2));
+      |                                                ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getTxPower':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:301:45: error: 'RFM9X_09_REG_PA_CONFIG' undeclared (first use in this function)
+  301 |         uint8_t regPaConfig = register_read(RFM9X_09_REG_PA_CONFIG);
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:311:6: warning: conflicting types for 'setBandwidth'; have 'void(double)'
+  311 | void setBandwidth(double bandwidth)
+      |      ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:139:9: note: previous implicit declaration of 'setBandwidth' with type 'void(double)'
+  139 |         setBandwidth(125e3);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setBandwidth':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:314:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  314 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setImplicitHeaderMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:355:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  355 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:366:6: warning: conflicting types for 'setExplicitHeaderMode'; have 'void()'
+  366 | void setExplicitHeaderMode()
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:143:9: note: previous implicit declaration of 'setExplicitHeaderMode' with type 'void()'
+  143 |         setExplicitHeaderMode();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setExplicitHeaderMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:368:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  368 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:381:6: warning: conflicting types for 'setSpreadingFactor'; have 'void(uint8_t)' {aka 'void(unsigned char)'}
+  381 | void setSpreadingFactor(uint8_t sf)
+      |      ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:141:9: note: previous implicit declaration of 'setSpreadingFactor' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+  141 |         setSpreadingFactor(7);
+      |         ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setSpreadingFactor':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:383:49: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  383 |         uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getSpreadingFactor':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:401:49: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  401 |         uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getSignalBandwidth':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:413:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  413 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:424:6: warning: conflicting types for 'setCodingRate'; have 'void(uint8_t)' {aka 'void(unsigned char)'}
+  424 | void setCodingRate(uint8_t denominator)
+      |      ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:140:9: note: previous implicit declaration of 'setCodingRate' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+  140 |         setCodingRate(5);
+      |         ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setCodingRate':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:426:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  426 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getCodingRate':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:449:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  449 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:461:6: warning: conflicting types for 'enableCRC'; have 'void()'
+  461 | void enableCRC()
+      |      ^~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:142:9: note: previous implicit declaration of 'enableCRC' with type 'void()'
+  142 |         enableCRC();
+      |         ^~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'enableCRC':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:463:49: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  463 |         uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'disableCRC':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:476:49: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  476 |         uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getRegOpMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:489:43: error: 'RFM9X_01_REG_OP_MODE' undeclared (first use in this function)
+  489 |         uint8_t regOpMode = register_read(RFM9X_01_REG_OP_MODE);
+      |                                           ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:497:9: error: conflicting types for 'setRegOpMode'; have 'uint8_t(uint8_t)' {aka 'unsigned char(unsigned char)'}
+  497 | uint8_t setRegOpMode(uint8_t mode)
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:114:9: note: previous implicit declaration of 'setRegOpMode' with type 'int()'
+  114 |         setRegOpMode(RFM9X_MODE_SLEEP);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setRegOpMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:500:22: error: 'RFM9X_MODE_SLEEP' undeclared (first use in this function)
+  500 |                 case RFM9X_MODE_SLEEP:
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:501:22: error: 'RFM9X_MODE_STDBY' undeclared (first use in this function)
+  501 |                 case RFM9X_MODE_STDBY:
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:502:22: error: 'RFM9X_MODE_FSTX' undeclared (first use in this function)
+  502 |                 case RFM9X_MODE_FSTX:
+      |                      ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:503:22: error: 'RFM9X_MODE_TX' undeclared (first use in this function)
+  503 |                 case RFM9X_MODE_TX:
+      |                      ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:504:22: error: 'RFM9X_MODE_FSRX' undeclared (first use in this function)
+  504 |                 case RFM9X_MODE_FSRX:
+      |                      ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:505:22: error: 'RFM9X_MODE_RXCONTINUOUS' undeclared (first use in this function)
+  505 |                 case RFM9X_MODE_RXCONTINUOUS:
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:506:22: error: 'RFM9X_MODE_RXSINGLE' undeclared (first use in this function)
+  506 |                 case RFM9X_MODE_RXSINGLE:
+      |                      ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:507:40: error: 'RFM9X_01_REG_OP_MODE' undeclared (first use in this function)
+  507 |                         register_write(RFM9X_01_REG_OP_MODE, mode | RFM9X_LONG_RANGE_MODE);
+      |                                        ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:507:69: error: 'RFM9X_LONG_RANGE_MODE' undeclared (first use in this function)
+  507 |                         register_write(RFM9X_01_REG_OP_MODE, mode | RFM9X_LONG_RANGE_MODE);
+      |                                                                     ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getCurrentOpMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:536:21: error: 'RFM9X_LONG_RANGE_MODE' undeclared (first use in this function)
+  536 |         if (mode == RFM9X_LONG_RANGE_MODE) {
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:541:30: error: 'RFM9X_MODE_SLEEP' undeclared (first use in this function)
+  541 |                         case RFM9X_MODE_SLEEP:
+      |                              ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:544:30: error: 'RFM9X_MODE_STDBY' undeclared (first use in this function)
+  544 |                         case RFM9X_MODE_STDBY:
+      |                              ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:547:30: error: 'RFM9X_MODE_FSTX' undeclared (first use in this function)
+  547 |                         case RFM9X_MODE_FSTX:
+      |                              ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:550:30: error: 'RFM9X_MODE_TX' undeclared (first use in this function)
+  550 |                         case RFM9X_MODE_TX:
+      |                              ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:553:30: error: 'RFM9X_MODE_FSRX' undeclared (first use in this function)
+  553 |                         case RFM9X_MODE_FSRX:
+      |                              ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:556:30: error: 'RFM9X_MODE_RXCONTINUOUS' undeclared (first use in this function)
+  556 |                         case RFM9X_MODE_RXCONTINUOUS:
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:559:30: error: 'RFM9X_MODE_RXSINGLE' undeclared (first use in this function)
+  559 |                         case RFM9X_MODE_RXSINGLE:
+      |                              ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'send':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:583:22: error: 'RFM9X_MODE_STDBY' undeclared (first use in this function)
+  583 |         setRegOpMode(RFM9X_MODE_STDBY);
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:587:24: error: 'RFM9X_0D_REG_FIFO_ADDR_PTR' undeclared (first use in this function)
+  587 |         register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, 0);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:590:24: error: 'RFM9X_00_REG_FIFO' undeclared (first use in this function)
+  590 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_TO);
+      |                        ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:590:43: error: 'RADIOHEAD_HEADER_TO' undeclared (first use in this function)
+  590 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_TO);
+      |                                           ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:591:43: error: 'RADIOHEAD_HEADER_FROM' undeclared (first use in this function)
+  591 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_FROM);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:592:43: error: 'RADIOHEAD_HEADER_ID' undeclared (first use in this function)
+  592 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_ID);
+      |                                           ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:593:43: error: 'RADIOHEAD_HEADER_FLAGS' undeclared (first use in this function)
+  593 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_FLAGS + identifier++);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:601:24: error: 'RFM9X_22_REG_PAYLOAD_LENGTH' undeclared (first use in this function)
+  601 |         register_write(RFM9X_22_REG_PAYLOAD_LENGTH, length + RFM9X_HEADER_LEN);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:601:62: error: 'RFM9X_HEADER_LEN' undeclared (first use in this function)
+  601 |         register_write(RFM9X_22_REG_PAYLOAD_LENGTH, length + RFM9X_HEADER_LEN);
+      |                                                              ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:607:22: error: 'RFM9X_MODE_TX' undeclared (first use in this function)
+  607 |         setRegOpMode(RFM9X_MODE_TX);
+      |                      ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:608:31: error: 'RFM9X_12_REG_IRQ_FLAGS' undeclared (first use in this function)
+  608 |         while ((register_read(RFM9X_12_REG_IRQ_FLAGS) & IRQ_TX_DONE_MASK) == 0) {
+      |                               ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:608:57: error: 'IRQ_TX_DONE_MASK' undeclared (first use in this function)
+  608 |         while ((register_read(RFM9X_12_REG_IRQ_FLAGS) & IRQ_TX_DONE_MASK) == 0) {
+      |                                                         ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setRxMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:622:22: error: 'RFM9X_MODE_RXCONTINUOUS' undeclared (first use in this function)
+  622 |         setRegOpMode(RFM9X_MODE_RXCONTINUOUS);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:624:24: error: 'RFM9X_40_REG_DIO_MAPPING1' undeclared (first use in this function)
+  624 |         register_write(RFM9X_40_REG_DIO_MAPPING1, 0x00);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

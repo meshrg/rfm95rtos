@@ -1,0 +1,1089 @@
+[1/517] Generating project_elf_src_esp32.c
+[2/517] Generating memory.ld linker script...
+[3/517] Generating ../../partition_table/partition-table.bin
+Partition table binary generated. Contents:
+*******************************************************************************
+# ESP-IDF Partition Table
+# Name, Type, SubType, Offset, Size, Flags
+nvs,data,nvs,0x9000,24K,
+phy_init,data,phy,0xf000,4K,
+factory,app,factory,0x10000,1M,
+*******************************************************************************
+[4/517] Building C object esp-idf/mbedtls/mbedtls/3rdparty/everest/CMakeFiles/everest.dir/library/x25519.c.obj
+[5/517] Building C object esp-idf/mbedtls/mbedtls/3rdparty/p256-m/CMakeFiles/p256m.dir/p256-m/p256-m.c.obj
+[6/517] Building C object esp-idf/mbedtls/mbedtls/3rdparty/everest/CMakeFiles/everest.dir/library/everest.c.obj
+[7/517] Building C object esp-idf/mbedtls/mbedtls/3rdparty/everest/CMakeFiles/everest.dir/library/Hacl_Curve25519_joined.c.obj
+[8/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/aesni.c.obj
+[9/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/aesce.c.obj
+[10/517] Building C object esp-idf/mbedtls/mbedtls/3rdparty/p256-m/CMakeFiles/p256m.dir/p256-m_driver_entrypoints.c.obj
+[11/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/bignum_mod_raw.c.obj
+[12/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/bignum_mod.c.obj
+[13/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/camellia.c.obj
+[14/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/chacha20.c.obj
+[15/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/chachapoly.c.obj
+[16/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/aes.c.obj
+[17/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/asn1parse.c.obj
+[18/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/asn1write.c.obj
+[19/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/cipher_wrap.c.obj
+[20/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/base64.c.obj
+[21/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/constant_time.c.obj
+[22/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/aria.c.obj
+[23/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/des.c.obj
+[24/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/dhm.c.obj
+[25/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ccm.c.obj
+[26/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ecjpake.c.obj
+[27/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ecp_curves_new.c.obj
+[28/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ecdh.c.obj
+[29/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/bignum_core.c.obj
+[30/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ctr_drbg.c.obj
+[31/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ecdsa.c.obj
+[32/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/entropy_poll.c.obj
+[33/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/hkdf.c.obj
+[34/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/cmac.c.obj
+[35/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/cipher.c.obj
+[36/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/gcm.c.obj
+[37/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/entropy.c.obj
+[38/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/error.c.obj
+[39/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/memory_buffer_alloc.c.obj
+[40/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/lms.c.obj
+[41/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/bignum.c.obj
+[42/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/nist_kw.c.obj
+[43/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/hmac_drbg.c.obj
+[44/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/md5.c.obj
+[45/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/padlock.c.obj
+[46/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/lmots.c.obj
+[47/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/md.c.obj
+[48/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/pem.c.obj
+[49/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/pk.c.obj
+[50/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ecp.c.obj
+[51/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/pk_wrap.c.obj
+[52/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/pkcs12.c.obj
+[53/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/pkcs5.c.obj
+[54/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/platform.c.obj
+[55/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/oid.c.obj
+[56/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/poly1305.c.obj
+[57/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ecp_curves.c.obj
+[58/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/platform_util.c.obj
+[59/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_client.c.obj
+[60/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_ffdh.c.obj
+[61/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/pkwrite.c.obj
+[62/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_driver_wrappers_no_static.c.obj
+[63/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_hash.c.obj
+[64/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_se.c.obj
+[65/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/pkparse.c.obj
+[66/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_pake.c.obj
+[67/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_cipher.c.obj
+[68/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_aead.c.obj
+[69/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_ecp.c.obj
+[70/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_mac.c.obj
+[71/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_util.c.obj
+[72/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ripemd160.c.obj
+[73/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_its_file.c.obj
+[74/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_storage.c.obj
+[75/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/sha1.c.obj
+[76/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_rsa.c.obj
+[77/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/sha256.c.obj
+[78/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/sha512.c.obj
+[79/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto_slot_management.c.obj
+[80/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/threading.c.obj
+[81/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/timing.c.obj
+[82/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/version.c.obj
+[83/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/rsa_alt_helpers.c.obj
+[84/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/version_features.c.obj
+[85/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/esp_hardware.c.obj
+[86/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/esp_mem.c.obj
+[87/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/esp_timing.c.obj
+[88/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/sha/esp_sha.c.obj
+[89/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/aes/esp_aes_common.c.obj
+[90/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/sha3.c.obj
+[91/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/aes/esp_aes_xts.c.obj
+[92/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/sha/parallel_engine/sha.c.obj
+[93/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/bignum/bignum_alt.c.obj
+[94/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/md/esp_md.c.obj
+[95/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/aes/block/esp_aes.c.obj
+[96/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/bignum/esp_bignum.c.obj
+[97/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/sha/parallel_engine/esp_sha256.c.obj
+[98/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/sha/parallel_engine/esp_sha1.c.obj
+[99/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/pkcs7.c.obj
+[100/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/aes/esp_aes_gcm.c.obj
+[101/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/sha/parallel_engine/esp_sha512.c.obj
+[102/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/rsa.c.obj
+[103/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_create.c.obj
+[104/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509write.c.obj
+[105/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/debug.c.obj
+[106/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509write_csr.c.obj
+[107/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_crl.c.obj
+[108/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/mps_reader.c.obj
+[109/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/mps_trace.c.obj
+[110/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_csr.c.obj
+[111/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_debug_helpers_generated.c.obj
+[112/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509write_crt.c.obj
+[113/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_cookie.c.obj
+[114/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_ciphersuites.c.obj
+[115/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/psa_crypto.c.obj
+[116/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_cache.c.obj
+[117/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls13_keys.c.obj
+[118/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls13_server.c.obj
+[119/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509.c.obj
+[120/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls13_generic.c.obj
+[121/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls13_client.c.obj
+[122/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_ticket.c.obj
+[123/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_client.c.obj
+[124/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/mbedtls_debug.c.obj
+[125/517] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_table.c.obj
+[126/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/Users/fvalde/esp/esp-idf/components/mbedtls/port/esp_platform_time.c.obj
+[127/517] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.obj
+[128/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_crt.c.obj
+[129/517] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_fields.c.obj
+[130/517] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_utility.c.obj
+[131/517] Building C object esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/esp_bootloader_desc.c.obj
+[132/517] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj
+[133/517] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_api.c.obj
+[134/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls12_client.c.obj
+[135/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_msg.c.obj
+[136/517] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[137/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_mem.c.obj
+[138/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random.c.obj
+[139/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_efuse.c.obj
+[140/517] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_utility.c.obj
+[141/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_clock_init.c.obj
+[142/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32.c.obj
+[143/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/secure_boot.c.obj
+[144/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/flash_encrypt.c.obj
+[145/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls12_server.c.obj
+[146/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_common_loader.c.obj
+[147/517] Creating directories for 'bootloader'
+[148/517] No download step for 'bootloader'
+[149/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/idf/bootloader_sha.c.obj
+[150/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/flash_partitions.c.obj
+[151/517] No update step for 'bootloader'
+[152/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_common.c.obj
+[153/517] No patch step for 'bootloader'
+[154/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/flash_qio_mode.c.obj
+[155/517] Building C object esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_app_desc.c.obj
+[156/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash.c.obj
+[157/517] Building C object esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/port/esp32/ext_mem_layout.c.obj
+[158/517] Building C object esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls.c.obj
+[159/517] Building C object esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition_target.c.obj
+[160/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32.c.obj
+[161/517] Building C object esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition.c.obj
+[162/517] Building C object esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/cache_esp32.c.obj
+[163/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp_image_format.c.obj
+[164/517] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_utility.c.obj
+[165/517] Building C object esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/esp_cache.c.obj
+[166/517] Building C object esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_ops.c.obj
+[167/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/flash_brownout_hook.c.obj
+[168/517] Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/spi_bus_lock.c.obj
+[169/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_drivers.c.obj
+[170/517] Building C object esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/esp_mmu_map.c.obj
+[171/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_issi.c.obj
+[172/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_mxic.c.obj
+[173/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_gd.c.obj
+[174/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_boya.c.obj
+[175/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_winbond.c.obj
+[176/517] Building C object esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/ringbuf.c.obj
+[177/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_th.c.obj
+[178/517] Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj
+[179/517] Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj
+[180/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_mxic_opi.c.obj
+[181/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_wrap.c.obj
+[182/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/flash_ops.c.obj
+[183/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_generic.c.obj
+[184/517] Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj
+[185/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/memspi_host_driver.c.obj
+[186/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_os_func_noos.c.obj
+[187/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/cache_utils.c.obj
+[188/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/flash_mmap.c.obj
+[189/517] Building C object esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread_local_storage.c.obj
+[190/517] Building C object esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread_cond_var.c.obj
+[191/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_os_func_app.c.obj
+[192/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/esp_err.c.obj
+[193/517] Building C object esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread_semaphore.c.obj
+[194/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/esp_flash_spi_init.c.obj
+[195/517] Building C object esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread_rwlock.c.obj
+[196/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/crosscore_int.c.obj
+[197/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/freertos_hooks.c.obj
+[198/517] Building C object esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread.c.obj
+[199/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/int_wdt.c.obj
+[200/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/esp_system.c.obj
+[201/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/esp_ipc.c.obj
+[202/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/stack_check.c.obj
+[203/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/xt_wdt.c.obj
+[204/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/system_time.c.obj
+[205/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/debug_stubs.c.obj
+[206/517] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/esp_flash_api.c.obj
+[207/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/ubsan.c.obj
+[208/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/panic.c.obj
+[209/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/esp_system_chip.c.obj
+[210/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/startup.c.obj
+[211/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/esp_ipc_isr_port.c.obj
+[212/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/brownout.c.obj
+[213/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/task_wdt/task_wdt_impl_timergroup.c.obj
+[214/517] Building ASM object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/esp_ipc_isr_handler.S.obj
+[215/517] Building ASM object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/esp_ipc_isr_routines.S.obj
+[216/517] Building ASM object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/panic_handler_asm.S.obj
+[217/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/task_wdt/task_wdt.c.obj
+[218/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/panic_handler.c.obj
+[219/517] Building ASM object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/expression_with_stack_asm.S.obj
+[220/517] Building ASM object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/debug_helpers_asm.S.obj
+[221/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/esp_ipc_isr.c.obj
+[222/517] Building ASM object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/highint_hdl.S.obj
+[223/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/debug_stubs.c.obj
+[224/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/trax.c.obj
+[225/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/expression_with_stack.c.obj
+[226/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/cpu_start.c.obj
+[227/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/panic_arch.c.obj
+[228/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/cache_err_int.c.obj
+[229/517] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_crc.c.obj
+[230/517] Building C object esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/src/esp_err_to_name.c.obj
+[231/517] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_sys.c.obj
+[232/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/arch/xtensa/debug_helpers.c.obj
+[233/517] Building ASM object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_longjmp.S.obj
+[234/517] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_efuse.c.obj
+[235/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/reset_reason.c.obj
+[236/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/mpu_hal.c.obj
+[237/517] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_uart.c.obj
+[238/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/system_internal.c.obj
+[239/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj
+[240/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj
+[241/517] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/clk.c.obj
+[242/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/wdt_hal_iram.c.obj
+[243/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj
+[244/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/spi_flash_encrypt_hal_iram.c.obj
+[245/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj
+[246/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/clk_tree_hal.c.obj
+[247/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/spi_flash_hal.c.obj
+[248/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj
+[249/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/gpio_hal.c.obj
+[250/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/uart_hal.c.obj
+[251/517] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_spiflash.c.obj
+[252/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/timer_hal.c.obj
+[253/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/uart_hal_iram.c.obj
+[254/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/spi_flash_hal_iram.c.obj
+[255/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/ledc_hal.c.obj
+[256/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/rtc_io_hal.c.obj
+[257/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/pcnt_hal.c.obj
+[258/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/ledc_hal_iram.c.obj
+[259/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/rmt_hal.c.obj
+[260/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/sdm_hal.c.obj
+[261/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/i2c_hal_iram.c.obj
+[262/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/i2c_hal.c.obj
+[263/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/twai_hal.c.obj
+[264/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/sdmmc_hal.c.obj
+[265/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/mcpwm_hal.c.obj
+[266/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/twai_hal_iram.c.obj
+[267/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/brownout_hal.c.obj
+[268/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/adc_hal_common.c.obj
+[269/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/aes_hal.c.obj
+[270/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/i2s_hal.c.obj
+[271/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/sha_hal.c.obj
+[272/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/adc_oneshot_hal.c.obj
+[273/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/mpi_hal.c.obj
+[274/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/gpio_hal_workaround.c.obj
+[275/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/spi_slave_hal.c.obj
+[276/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/touch_sensor_hal.c.obj
+[277/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/touch_sensor_hal.c.obj
+[278/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/spi_hal.c.obj
+[279/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/adc_hal.c.obj
+[280/517] Building C object esp-idf/log/CMakeFiles/__idf_log.dir/log.c.obj
+[281/517] Building C object esp-idf/log/CMakeFiles/__idf_log.dir/log_buffers.c.obj
+[282/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/spi_slave_hal_iram.c.obj
+[283/517] Building C object esp-idf/log/CMakeFiles/__idf_log.dir/log_freertos.c.obj
+[284/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/sdio_slave_hal.c.obj
+[285/517] Building C object esp-idf/heap/CMakeFiles/__idf_heap.dir/port/esp32/memory_layout.c.obj
+[286/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/lldesc.c.obj
+[287/517] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/spi_hal_iram.c.obj
+[288/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/interrupts.c.obj
+[289/517] Building C object esp-idf/heap/CMakeFiles/__idf_heap.dir/heap_caps_init.c.obj
+[290/517] Building C object esp-idf/heap/CMakeFiles/__idf_heap.dir/multi_heap.c.obj
+[291/517] Building C object esp-idf/heap/CMakeFiles/__idf_heap.dir/heap_caps.c.obj
+[292/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/uart_periph.c.obj
+[293/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/gpio_periph.c.obj
+[294/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/dport_access_common.c.obj
+[295/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/adc_periph.c.obj
+[296/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/dport_access.c.obj
+[297/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/spi_periph.c.obj
+[298/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/ledc_periph.c.obj
+[299/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/rmt_periph.c.obj
+[300/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdm_periph.c.obj
+[301/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/pcnt_periph.c.obj
+[302/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/i2c_periph.c.obj
+[303/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/i2s_periph.c.obj
+[304/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/timer_periph.c.obj
+[305/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/lcd_periph.c.obj
+[306/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mcpwm_periph.c.obj
+[307/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdmmc_periph.c.obj
+[308/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mpi_periph.c.obj
+[309/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/dac_periph.c.obj
+[310/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/twai_periph.c.obj
+[311/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/touch_sensor_periph.c.obj
+[312/517] Building C object esp-idf/heap/CMakeFiles/__idf_heap.dir/port/memory_layout_utils.c.obj
+[313/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/rtc_io_periph.c.obj
+[314/517] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdio_slave_periph.c.obj
+[315/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/esp_memory_utils.c.obj
+[316/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cpu_region_protect.c.obj
+[317/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/revision.c.obj
+[318/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/hw_random.c.obj
+[319/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/cpu.c.obj
+[320/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/clk_ctrl_os.c.obj
+[321/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sleep_console.c.obj
+[322/517] Performing configure step for 'bootloader'
+-- Found Git: /usr/bin/git (found version "2.37.1 (Apple Git-137.1)") 
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /Users/fvalde/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Users/fvalde/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Users/fvalde/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Adding linker script /Users/fvalde/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Bootloader project name: "bootloader" version: 1
+-- Adding linker script /Users/fvalde/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/fvalde/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/fvalde/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/fvalde/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /Users/fvalde/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.ld
+-- Adding linker script /Users/fvalde/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_bootloader_format esp_common esp_hw_support esp_rom esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
+-- Component paths: /Users/fvalde/esp/esp-idf/components/bootloader /Users/fvalde/esp/esp-idf/components/bootloader_support /Users/fvalde/esp/esp-idf/components/efuse /Users/fvalde/esp/esp-idf/components/esp_app_format /Users/fvalde/esp/esp-idf/components/esp_bootloader_format /Users/fvalde/esp/esp-idf/components/esp_common /Users/fvalde/esp/esp-idf/components/esp_hw_support /Users/fvalde/esp/esp-idf/components/esp_rom /Users/fvalde/esp/esp-idf/components/esp_system /Users/fvalde/esp/esp-idf/components/esptool_py /Users/fvalde/esp/esp-idf/components/freertos /Users/fvalde/esp/esp-idf/components/hal /Users/fvalde/esp/esp-idf/components/log /Users/fvalde/esp/esp-idf/components/bootloader/subproject/main /Users/fvalde/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /Users/fvalde/esp/esp-idf/components/newlib /Users/fvalde/esp/esp-idf/components/partition_table /Users/fvalde/esp/esp-idf/components/soc /Users/fvalde/esp/esp-idf/components/spi_flash /Users/fvalde/esp/esp-idf/components/xtensa
+-- Configuring done (5.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader
+[323/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/esp_clk.c.obj
+[324/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sleep_event.c.obj
+[325/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/periph_ctrl.c.obj
+[326/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mac_addr.c.obj
+[327/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/esp_gpio_reserve.c.obj
+[328/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sleep_modem.c.obj
+[329/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/rtc_module.c.obj
+[330/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sar_periph_ctrl_common.c.obj
+[331/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/intr_alloc.c.obj
+[332/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/io_mux.c.obj
+[333/517] Building C object esp-idf/heap/CMakeFiles/__idf_heap.dir/tlsf/tlsf.c.obj
+[334/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/regi2c_ctrl.c.obj
+[335/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_config.c.obj
+[336/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_clk_tree.c.obj
+[337/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/dma/esp_dma_utils.c.obj
+[338/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/adc_share_hw_ctrl.c.obj
+[339/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp_clk_tree_common.c.obj
+[340/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_tuning.c.obj
+[341/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/rtc_wdt.c.obj
+[342/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sleep_gpio.c.obj
+[343/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/chip_info.c.obj
+[344/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sleep_wake_stub.c.obj
+[345/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj
+[346/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_init.c.obj
+[347/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sleep_modes.c.obj
+[348/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram_mmu.c.obj
+[349/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_sleep.c.obj
+[350/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk_init.c.obj
+[351/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/app_startup.c.obj
+[352/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/port_common.c.obj
+[353/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj
+[354/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/heap_idf.c.obj
+[355/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_time.c.obj
+[356/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/esp_clock_output.c.obj
+[357/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/list.c.obj
+[358/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/port_systick.c.obj
+[359/517] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk.c.obj
+[360/517] Building ASM object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/portable/xtensa/portasm.S.obj
+[361/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/portable/xtensa/xtensa_init.c.obj
+[362/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/portable/xtensa/xtensa_overlay_os_hook.c.obj
+[363/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/event_groups.c.obj
+[364/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/esp_additions/freertos_compatibility.c.obj
+[365/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/abort.c.obj
+[366/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/heap.c.obj
+[367/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/timers.c.obj
+[368/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/portable/xtensa/port.c.obj
+[369/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/stream_buffer.c.obj
+[370/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/esp_additions/idf_additions.c.obj
+[371/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/assert.c.obj
+[372/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/random.c.obj
+[373/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/pthread.c.obj
+[374/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/getentropy.c.obj
+[375/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/queue.c.obj
+[376/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/termios.c.obj
+[377/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/poll.c.obj
+[378/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/reent_init.c.obj
+[379/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/newlib_init.c.obj
+[380/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/sysconf.c.obj
+[381/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/locks.c.obj
+[382/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/port/esp_time_impl.c.obj
+[383/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/syscalls.c.obj
+[384/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/realpath.c.obj
+[385/517] Building CXX object esp-idf/cxx/CMakeFiles/__idf_cxx.dir/cxx_exception_stubs.cpp.obj
+[386/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/time.c.obj
+[387/517] Building C object esp-idf/newlib/CMakeFiles/__idf_newlib.dir/stdatomic.c.obj
+[388/517] Building C object esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/tasks.c.obj
+[389/517] Building CXX object esp-idf/cxx/CMakeFiles/__idf_cxx.dir/cxx_guards.cpp.obj
+[390/517] Linking C static library esp-idf/cxx/libcxx.a
+[391/517] Linking C static library esp-idf/newlib/libnewlib.a
+[392/517] Linking C static library esp-idf/freertos/libfreertos.a
+[393/517] Linking C static library esp-idf/esp_hw_support/libesp_hw_support.a
+[394/517] Linking C static library esp-idf/soc/libsoc.a
+[395/517] Linking C static library esp-idf/heap/libheap.a
+[396/517] Linking C static library esp-idf/log/liblog.a
+[397/517] Linking C static library esp-idf/hal/libhal.a
+[398/517] Linking C static library esp-idf/esp_rom/libesp_rom.a
+[399/517] Linking C static library esp-idf/esp_common/libesp_common.a
+[400/517] Performing build step for 'bootloader'
+[1/106] Generating project_elf_src_esp32.c
+[2/106] Building C object CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj
+[3/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/interrupts.c.obj
+[4/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/adc_periph.c.obj
+[5/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/uart_periph.c.obj
+[6/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/gpio_periph.c.obj
+[7/106] Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj
+[8/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/dport_access.c.obj
+[9/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/pcnt_periph.c.obj
+[10/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdm_periph.c.obj
+[11/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/rmt_periph.c.obj
+[12/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/spi_periph.c.obj
+[13/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/ledc_periph.c.obj
+[14/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/i2c_periph.c.obj
+[15/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/timer_periph.c.obj
+[16/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/dport_access_common.c.obj
+[17/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/i2s_periph.c.obj
+[18/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mpi_periph.c.obj
+[19/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdmmc_periph.c.obj
+[20/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mcpwm_periph.c.obj
+[21/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/lcd_periph.c.obj
+[22/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/touch_sensor_periph.c.obj
+[23/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/dac_periph.c.obj
+[24/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/rtc_io_periph.c.obj
+[25/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/twai_periph.c.obj
+[26/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdio_slave_periph.c.obj
+[27/106] Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj
+[28/106] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/lldesc.c.obj
+[29/106] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/mpu_hal.c.obj
+[30/106] Building C object esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_wrap.c.obj
+[31/106] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj
+[32/106] Building C object esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/esp_bootloader_desc.c.obj
+[33/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_mem.c.obj
+[34/106] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj
+[35/106] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/wdt_hal_iram.c.obj
+[36/106] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj
+[37/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/secure_boot.c.obj
+[38/106] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj
+[39/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_efuse.c.obj
+[40/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_clock_init.c.obj
+[41/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random.c.obj
+[42/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32.c.obj
+[43/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/flash_encrypt.c.obj
+[44/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_common.c.obj
+[45/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_common_loader.c.obj
+[46/106] Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj
+[47/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_clock_loader.c.obj
+[48/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_console_loader.c.obj
+[49/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_console.c.obj
+[50/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/flash_partitions.c.obj
+[51/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/bootloader_soc.c.obj
+[52/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/flash_qio_mode.c.obj
+[53/106] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_table.c.obj
+[54/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_init.c.obj
+[55/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_panic.c.obj
+[56/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32.c.obj
+[57/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/bootloader_sha.c.obj
+[58/106] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.obj
+[59/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/bootloader_esp32.c.obj
+[60/106] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_fields.c.obj
+[61/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash.c.obj
+[62/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/esp_memory_utils.c.obj
+[63/106] Building C object esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/esp_err.c.obj
+[64/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_utility.c.obj
+[65/106] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_api.c.obj
+[66/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cpu_region_protect.c.obj
+[67/106] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_utility.c.obj
+[68/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/cpu.c.obj
+[69/106] Building C object esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp_image_format.c.obj
+[70/106] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj
+[71/106] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_crc.c.obj
+[72/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_init.c.obj
+[73/106] Building C object esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/src/esp_err_to_name.c.obj
+[74/106] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_sys.c.obj
+[75/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/chip_info.c.obj
+[76/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk_init.c.obj
+[77/106] Building ASM object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_longjmp.S.obj
+[78/106] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_efuse.c.obj
+[79/106] Building C object esp-idf/micro-ecc/CMakeFiles/__idf_micro-ecc.dir/uECC_verify_antifault.c.obj
+[80/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_sleep.c.obj
+[81/106] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_uart.c.obj
+[82/106] Building C object esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_utility.c.obj
+[83/106] Building C object esp-idf/log/CMakeFiles/__idf_log.dir/log_noos.c.obj
+[84/106] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/bootloader_start.c.obj
+[85/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_time.c.obj
+[86/106] Building C object esp-idf/log/CMakeFiles/__idf_log.dir/log.c.obj
+[87/106] Building C object esp-idf/log/CMakeFiles/__idf_log.dir/log_buffers.c.obj
+[88/106] Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk.c.obj
+[89/106] Linking C static library esp-idf/log/liblog.a
+[90/106] Building C object esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_spiflash.c.obj
+[91/106] Linking C static library esp-idf/esp_rom/libesp_rom.a
+[92/106] Linking C static library esp-idf/esp_common/libesp_common.a
+[93/106] Linking C static library esp-idf/esp_hw_support/libesp_hw_support.a
+[94/106] Linking C static library esp-idf/esp_system/libesp_system.a
+[95/106] Linking C static library esp-idf/efuse/libefuse.a
+[96/106] Linking C static library esp-idf/bootloader_support/libbootloader_support.a
+[97/106] Linking C static library esp-idf/esp_bootloader_format/libesp_bootloader_format.a
+[98/106] Linking C static library esp-idf/spi_flash/libspi_flash.a
+[99/106] Linking C static library esp-idf/hal/libhal.a
+[100/106] Linking C static library esp-idf/micro-ecc/libmicro-ecc.a
+[101/106] Linking C static library esp-idf/soc/libsoc.a
+[102/106] Linking C static library esp-idf/xtensa/libxtensa.a
+[103/106] Linking C static library esp-idf/main/libmain.a
+[104/106] Linking C executable bootloader.elf
+[105/106] Generating binary image from built executable
+esptool.py v4.7.dev3
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/bootloader.bin
+[106/106] cd /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/esp-idf/esptool_py && /Users/fvalde/.espressif/python_env/idf5.3_py3.11_env/bin/python /Users/fvalde/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/bootloader.bin
+Bootloader binary size 0x6810 bytes. 0x7f0 bytes (7%) free.
+[401/517] No install step for 'bootloader'
+[402/517] Completed 'bootloader'
+[403/517] Linking C static library esp-idf/esp_system/libesp_system.a
+[404/517] Linking C static library esp-idf/pthread/libpthread.a
+[405/517] Linking C static library esp-idf/spi_flash/libspi_flash.a
+[406/517] Linking C static library esp-idf/esp_driver_spi/libesp_driver_spi.a
+[407/517] Linking C static library esp-idf/esp_ringbuf/libesp_ringbuf.a
+[408/517] Linking C static library esp-idf/esp_mm/libesp_mm.a
+[409/517] Linking C static library esp-idf/app_update/libapp_update.a
+[410/517] Linking C static library esp-idf/esp_partition/libesp_partition.a
+[411/517] Linking C static library esp-idf/bootloader_support/libbootloader_support.a
+[412/517] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[413/517] Linking C static library esp-idf/esp_bootloader_format/libesp_bootloader_format.a
+[414/517] Linking C static library esp-idf/efuse/libefuse.a
+[415/517] Linking CXX static library esp-idf/mbedtls/mbedtls/library/libmbedtls.a
+[416/517] Linking CXX static library esp-idf/mbedtls/mbedtls/library/libmbedx509.a
+[417/517] Linking CXX static library esp-idf/mbedtls/mbedtls/library/libmbedcrypto.a
+[418/517] Linking CXX static library esp-idf/mbedtls/mbedtls/3rdparty/p256-m/libp256m.a
+[419/517] Linking CXX static library esp-idf/mbedtls/mbedtls/3rdparty/everest/libeverest.a
+[420/517] Generating x509_crt_bundle
+[421/517] Generating ../../x509_crt_bundle.S
+[422/517] Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj
+[423/517] Building ASM object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xtensa_context.S.obj
+[424/517] Building ASM object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xtensa_vectors.S.obj
+[425/517] Building ASM object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xtensa_intr_asm.S.obj
+[426/517] Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj
+[427/517] Building C object esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/gpio_glitch_filter_ops.c.obj
+[428/517] Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xtensa_intr.c.obj
+[429/517] Building C object esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/src/esp_timer_impl_common.c.obj
+[430/517] Building C object esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/pm_locks.c.obj
+[431/517] Building C object esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/src/system_time.c.obj
+[432/517] Building C object esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/pm_trace.c.obj
+[433/517] Building ASM object esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/__/__/x509_crt_bundle.S.obj
+[434/517] Building C object esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/src/ets_timer_legacy.c.obj
+[435/517] Building C object esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/rtc_io.c.obj
+[436/517] Building C object esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/src/gptimer_priv.c.obj
+[437/517] Building C object esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/esp_crt_bundle/esp_crt_bundle.c.obj
+[438/517] Building C object esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/src/esp_timer_impl_lac.c.obj
+[439/517] Building C object esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/src/esp_timer.c.obj
+[440/517] Linking C static library esp-idf/mbedtls/libmbedtls.a
+[441/517] Building C object esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/pm_impl.c.obj
+[442/517] Building C object esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/src/mcpwm_cmpr.c.obj
+[443/517] Linking C static library esp-idf/esp_pm/libesp_pm.a
+[444/517] Building C object esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/src/mcpwm_com.c.obj
+[445/517] Building C object esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/src/gptimer.c.obj
+[446/517] Building C object esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/src/mcpwm_fault.c.obj
+[447/517] Building C object esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/gpio.c.obj
+[448/517] Linking C static library esp-idf/esp_timer/libesp_timer.a
+[449/517] Building C object esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/src/mcpwm_cap.c.obj
+[450/517] Building C object esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/src/pulse_cnt.c.obj
+[451/517] Linking C static library esp-idf/esp_driver_gpio/libesp_driver_gpio.a
+[452/517] Linking C static library esp-idf/xtensa/libxtensa.a
+[453/517] Building C object esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/src/mcpwm_oper.c.obj
+[454/517] Building C object esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/src/mcpwm_gen.c.obj
+[455/517] Linking C static library esp-idf/esp_driver_pcnt/libesp_driver_pcnt.a
+[456/517] Building C object esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/sdmmc_init.c.obj
+[457/517] Linking C static library esp-idf/esp_driver_gptimer/libesp_driver_gptimer.a
+[458/517] Building C object esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/src/mcpwm_sync.c.obj
+[459/517] Building C object esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/sdmmc_common.c.obj
+[460/517] Building C object esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/sdmmc_mmc.c.obj
+[461/517] Building C object esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/sdmmc_cmd.c.obj
+[462/517] Building C object esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/sdmmc_io.c.obj
+[463/517] Building C object esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/src/mcpwm_timer.c.obj
+[464/517] Building C object esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/src/sdmmc_transaction.c.obj
+[465/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/dac/dac_oneshot.c.obj
+[466/517] Linking C static library esp-idf/esp_driver_mcpwm/libesp_driver_mcpwm.a
+[467/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/adc_legacy.c.obj
+[468/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/adc_dma_legacy.c.obj
+[469/517] Building C object esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/sdmmc_sd.c.obj
+[470/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/dac/dac_common.c.obj
+[471/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/dac/dac_cosine.c.obj
+[472/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/esp32/dac_legacy.c.obj
+[473/517] Linking C static library esp-idf/sdmmc/libsdmmc.a
+[474/517] Building C object esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/src/sdmmc_host.c.obj
+[475/517] Linking C static library esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a
+[476/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/dac_common_legacy.c.obj
+[477/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/dac/dac_continuous.c.obj
+[478/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/dac/esp32/dac_dma.c.obj
+[479/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2s/i2s_platform.c.obj
+[480/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c_common.c.obj
+[481/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/timer_legacy.c.obj
+[482/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2s/i2s_std.c.obj
+[483/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c_slave.c.obj
+[484/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2s/i2s_pdm.c.obj
+[485/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/rmt/rmt_common.c.obj
+[486/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2s/i2s_common.c.obj
+[487/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c_master.c.obj
+[488/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/rmt/rmt_encoder.c.obj
+[489/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj
+[490/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/sigma_delta_legacy.c.obj
+[491/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/pcnt_legacy.c.obj
+[492/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/i2s_legacy.c.obj
+[493/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/sigma_delta/sdm.c.obj
+[494/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/sdspi/sdspi_crc.c.obj
+[495/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/ledc/ledc.c.obj
+[496/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/sdio_slave/sdio_slave.c.obj
+[497/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/rmt/rmt_rx.c.obj
+[498/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/mcpwm_legacy.c.obj
+[499/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/rmt/rmt_tx.c.obj
+[500/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/sdspi/sdspi_transaction.c.obj
+[501/517] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj 
+/Users/fvalde/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.3-dev-422-ga7fbf452fa\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/config -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main -I/Users/fvalde/esp/esp-idf/components/newlib/platform_include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/esp_additions/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/private_include -I/Users/fvalde/esp/esp-idf/components/heap/include -I/Users/fvalde/esp/esp-idf/components/log/include -I/Users/fvalde/esp/esp-idf/components/soc/include -I/Users/fvalde/esp/esp-idf/components/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/soc/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/platform_port/include -I/Users/fvalde/esp/esp-idf/components/hal/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_rom/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_common/include -I/Users/fvalde/esp/esp-idf/components/esp_system/include -I/Users/fvalde/esp/esp-idf/components/esp_system/port/soc -I/Users/fvalde/esp/esp-idf/components/esp_system/port/include/private -I/Users/fvalde/esp/esp-idf/components/xtensa/esp32/include -I/Users/fvalde/esp/esp-idf/components/xtensa/include -I/Users/fvalde/esp/esp-idf/components/xtensa/deprecated_include -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/include -I/Users/fvalde/esp/esp-idf/components/driver/include -I/Users/fvalde/esp/esp-idf/components/driver/deprecated -I/Users/fvalde/esp/esp-idf/components/driver/analog_comparator/include -I/Users/fvalde/esp/esp-idf/components/driver/dac/include -I/Users/fvalde/esp/esp-idf/components/driver/i2c/include -I/Users/fvalde/esp/esp-idf/components/driver/i2s/include -I/Users/fvalde/esp/esp-idf/components/driver/ledc/include -I/Users/fvalde/esp/esp-idf/components/driver/parlio/include -I/Users/fvalde/esp/esp-idf/components/driver/rmt/include -I/Users/fvalde/esp/esp-idf/components/driver/sdio_slave/include -I/Users/fvalde/esp/esp-idf/components/driver/sdspi/include -I/Users/fvalde/esp/esp-idf/components/driver/sigma_delta/include -I/Users/fvalde/esp/esp-idf/components/driver/temperature_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/twai/include -I/Users/fvalde/esp/esp-idf/components/driver/uart/include -I/Users/fvalde/esp/esp-idf/components/driver/usb_serial_jtag/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/Users/fvalde/esp/esp-idf/components/esp_pm/include -I/Users/fvalde/esp/esp-idf/components/esp_ringbuf/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gpio/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_pcnt/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gptimer/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_spi/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_mcpwm/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_sdmmc/include -I/Users/fvalde/esp/esp-idf/components/sdmmc/include -I/Users/fvalde/esp/esp-idf/components/esp_timer/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/port/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/library -I/Users/fvalde/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -I/Users/fvalde/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -I/Users/fvalde/esp/esp-idf/components/efuse/include -I/Users/fvalde/esp/esp-idf/components/efuse/esp32/include -I/Users/fvalde/esp/esp-idf/components/esp_bootloader_format/include -I/Users/fvalde/esp/esp-idf/components/esp_app_format/include -I/Users/fvalde/esp/esp-idf/components/bootloader_support/include -I/Users/fvalde/esp/esp-idf/components/bootloader_support/bootloader_flash/include -I/Users/fvalde/esp/esp-idf/components/esp_partition/include -I/Users/fvalde/esp/esp-idf/components/app_update/include -I/Users/fvalde/esp/esp-idf/components/esp_mm/include -I/Users/fvalde/esp/esp-idf/components/spi_flash/include -I/Users/fvalde/esp/esp-idf/components/pthread/include -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx=. -fmacro-prefix-map=/Users/fvalde/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj -c /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/rfm95rtos-rx.c:4:10: fatal error: pa1010d.h: No such file or directory
+    4 | #include "pa1010d.h"
+      |          ^~~~~~~~~~~
+compilation terminated.
+[502/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj
+[503/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/adc_i2s_deprecated.c.obj
+[504/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/sdspi/sdspi_host.c.obj
+[505/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj
+[506/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj
+[507/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/rmt_legacy.c.obj
+[508/517] Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/uart/uart.c.obj
+[509/517] Building C object esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj
+FAILED: esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj 
+/Users/fvalde/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.3-dev-422-ga7fbf452fa\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/config -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/include -I/Users/fvalde/esp/esp-idf/components/newlib/platform_include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/esp_additions/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/private_include -I/Users/fvalde/esp/esp-idf/components/heap/include -I/Users/fvalde/esp/esp-idf/components/log/include -I/Users/fvalde/esp/esp-idf/components/soc/include -I/Users/fvalde/esp/esp-idf/components/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/soc/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/platform_port/include -I/Users/fvalde/esp/esp-idf/components/hal/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_rom/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_common/include -I/Users/fvalde/esp/esp-idf/components/esp_system/include -I/Users/fvalde/esp/esp-idf/components/esp_system/port/soc -I/Users/fvalde/esp/esp-idf/components/esp_system/port/include/private -I/Users/fvalde/esp/esp-idf/components/xtensa/esp32/include -I/Users/fvalde/esp/esp-idf/components/xtensa/include -I/Users/fvalde/esp/esp-idf/components/xtensa/deprecated_include -I/Users/fvalde/esp/esp-idf/components/driver/include -I/Users/fvalde/esp/esp-idf/components/driver/deprecated -I/Users/fvalde/esp/esp-idf/components/driver/analog_comparator/include -I/Users/fvalde/esp/esp-idf/components/driver/dac/include -I/Users/fvalde/esp/esp-idf/components/driver/i2c/include -I/Users/fvalde/esp/esp-idf/components/driver/i2s/include -I/Users/fvalde/esp/esp-idf/components/driver/ledc/include -I/Users/fvalde/esp/esp-idf/components/driver/parlio/include -I/Users/fvalde/esp/esp-idf/components/driver/rmt/include -I/Users/fvalde/esp/esp-idf/components/driver/sdio_slave/include -I/Users/fvalde/esp/esp-idf/components/driver/sdspi/include -I/Users/fvalde/esp/esp-idf/components/driver/sigma_delta/include -I/Users/fvalde/esp/esp-idf/components/driver/temperature_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/twai/include -I/Users/fvalde/esp/esp-idf/components/driver/uart/include -I/Users/fvalde/esp/esp-idf/components/driver/usb_serial_jtag/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/Users/fvalde/esp/esp-idf/components/esp_pm/include -I/Users/fvalde/esp/esp-idf/components/esp_ringbuf/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gpio/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_pcnt/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gptimer/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_spi/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_mcpwm/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_sdmmc/include -I/Users/fvalde/esp/esp-idf/components/sdmmc/include -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx=. -fmacro-prefix-map=/Users/fvalde/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj -MF esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj.d -o esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj -c /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'spi_init':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:50:24: error: 'GPIO_NUM_RST' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   50 |         gpio_reset_pin(GPIO_NUM_RST);
+      |                        ^~~~~~~~~~~~
+      |                        GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:50:24: note: each undeclared identifier is reported only once for each function it appears in
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:54:24: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+   54 |         gpio_reset_pin(GPIO_NUM_CS);
+      |                        ^~~~~~~~~~~
+      |                        GPIO_NUM_39
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:59:26: error: 'GPIO_NUM_MISO' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   59 |         .miso_io_num   = GPIO_NUM_MISO,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:60:26: error: 'GPIO_NUM_MOSI' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   60 |         .mosi_io_num   = GPIO_NUM_MOSI,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:61:26: error: 'GPIO_NUM_SCLK' undeclared (first use in this function); did you mean 'GPIO_NUM_NC'?
+   61 |         .sclk_io_num   = GPIO_NUM_SCLK,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_NC
+In file included from /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:32:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:68:18: error: 'TAG' undeclared (first use in this function)
+   68 |         ESP_LOGI(TAG, "spi_bus_initialize=%d",ret);
+      |                  ^~~
+/Users/fvalde/esp/esp-idf/components/log/include/esp_log.h:436:81: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                 ^~~
+/Users/fvalde/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:68:9: note: in expansion of macro 'ESP_LOGI'
+   68 |         ESP_LOGI(TAG, "spi_bus_initialize=%d",ret);
+      |         ^~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:73:35: error: 'CLOCK_SPEED_MHZ' undeclared (first use in this function)
+   73 |                 .clock_speed_hz = CLOCK_SPEED_MHZ * 1000 * 1000,
+      |                                   ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'reset_radio':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:94:18: error: 'TAG' undeclared (first use in this function)
+   94 |         ESP_LOGI(TAG, "reseting lora radio. Starting...");
+      |                  ^~~
+/Users/fvalde/esp/esp-idf/components/log/include/esp_log.h:436:81: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                 ^~~
+/Users/fvalde/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:94:9: note: in expansion of macro 'ESP_LOGI'
+   94 |         ESP_LOGI(TAG, "reseting lora radio. Starting...");
+      |         ^~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:95:24: error: 'GPIO_NUM_RST' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   95 |         gpio_set_level(GPIO_NUM_RST, 0);
+      |                        ^~~~~~~~~~~~
+      |                        GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'radio_init':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:111:9: error: implicit declaration of function 'check_radio_version' [-Werror=implicit-function-declaration]
+  111 |         check_radio_version();
+      |         ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:114:9: error: implicit declaration of function 'setRegOpMode' [-Werror=implicit-function-declaration]
+  114 |         setRegOpMode(RFM9X_MODE_SLEEP);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:114:22: error: 'RFM9X_MODE_SLEEP' undeclared (first use in this function)
+  114 |         setRegOpMode(RFM9X_MODE_SLEEP);
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:118:9: error: implicit declaration of function 'register_write'; did you mean 'i2c_master_write'? [-Werror=implicit-function-declaration]
+  118 |         register_write(RFM9X_0E_REG_FIFO_TX_BASE_ADDR, 0);
+      |         ^~~~~~~~~~~~~~
+      |         i2c_master_write
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:118:24: error: 'RFM9X_0E_REG_FIFO_TX_BASE_ADDR' undeclared (first use in this function)
+  118 |         register_write(RFM9X_0E_REG_FIFO_TX_BASE_ADDR, 0);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:119:24: error: 'RFM9X_0F_REG_FIFO_RX_BASE_ADDR' undeclared (first use in this function)
+  119 |         register_write(RFM9X_0F_REG_FIFO_RX_BASE_ADDR, 0);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:122:22: error: 'RFM9X_MODE_STDBY' undeclared (first use in this function)
+  122 |         setRegOpMode(RFM9X_MODE_STDBY);
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:139:9: error: implicit declaration of function 'setBandwidth' [-Werror=implicit-function-declaration]
+  139 |         setBandwidth(125e3);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:140:9: error: implicit declaration of function 'setCodingRate' [-Werror=implicit-function-declaration]
+  140 |         setCodingRate(5);
+      |         ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:141:9: error: implicit declaration of function 'setSpreadingFactor' [-Werror=implicit-function-declaration]
+  141 |         setSpreadingFactor(7);
+      |         ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:142:9: error: implicit declaration of function 'enableCRC' [-Werror=implicit-function-declaration]
+  142 |         enableCRC();
+      |         ^~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:143:9: error: implicit declaration of function 'setExplicitHeaderMode' [-Werror=implicit-function-declaration]
+  143 |         setExplicitHeaderMode();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:146:9: error: implicit declaration of function 'setTxPower' [-Werror=implicit-function-declaration]
+  146 |         setTxPower(13);
+      |         ^~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:149:9: error: implicit declaration of function 'setPreambleLength' [-Werror=implicit-function-declaration]
+  149 |         setPreambleLength(8);
+      |         ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:152:9: error: implicit declaration of function 'setFrequency' [-Werror=implicit-function-declaration]
+  152 |         setFrequency(915);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:153:44: error: implicit declaration of function 'getFrecuency' [-Werror=implicit-function-declaration]
+  153 |         printf("Frequency: %" PRIu32 "\n", getFrecuency());
+      |                                            ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:153:16: error: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Werror=format=]
+  153 |         printf("Frequency: %" PRIu32 "\n", getFrecuency());
+      |                ^~~~~~~~~~~~~~              ~~~~~~~~~~~~~~
+      |                                            |
+      |                                            int
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:156:31: error: implicit declaration of function 'register_read' [-Werror=implicit-function-declaration]
+  156 |         uint8_t current_reg = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                               ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:156:45: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  156 |         uint8_t current_reg = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:158:37: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  158 |         current_reg = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:160:37: error: 'RFM9X_26_REG_MODEM_CONFIG3' undeclared (first use in this function)
+  160 |         current_reg = register_read(RFM9X_26_REG_MODEM_CONFIG3);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:167:6: warning: conflicting types for 'check_radio_version'; have 'void(void)'
+  167 | void check_radio_version(void)
+      |      ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:111:9: note: previous implicit declaration of 'check_radio_version' with type 'void(void)'
+  111 |         check_radio_version();
+      |         ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'check_radio_version':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:172:28: error: 'RFM9X_42_REG_VERSION' undeclared (first use in this function)
+  172 |         version_register = RFM9X_42_REG_VERSION;
+      |                            ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:176:23: error: 'RFM9X_42_REG_VERSION_VALUE' undeclared (first use in this function)
+  176 |         if (result == RFM9X_42_REG_VERSION_VALUE) {
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'register_read':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:198:19: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+  198 |    gpio_set_level(GPIO_NUM_CS, 0);
+      |                   ^~~~~~~~~~~
+      |                   GPIO_NUM_39
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'register_write':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:210:41: error: 'SPI_WRITE_BIT_MASK' undeclared (first use in this function)
+  210 |         uint8_t buffer_out[2] = { reg | SPI_WRITE_BIT_MASK, value };
+      |                                         ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:219:24: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+  219 |         gpio_set_level(GPIO_NUM_CS, 0);
+      |                        ^~~~~~~~~~~
+      |                        GPIO_NUM_39
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:230:6: warning: conflicting types for 'setPreambleLength'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  230 | void setPreambleLength(uint16_t length)
+      |      ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:149:9: note: previous implicit declaration of 'setPreambleLength' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  149 |         setPreambleLength(8);
+      |         ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setPreambleLength':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:233:24: error: 'RFM9X_20_REG_PREAMBLE_MSB' undeclared (first use in this function)
+  233 |         register_write(RFM9X_20_REG_PREAMBLE_MSB, (length >> 8) & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:235:24: error: 'RFM9X_21_REG_PREAMBLE_LSB' undeclared (first use in this function)
+  235 |         register_write(RFM9X_21_REG_PREAMBLE_LSB, length & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getPreambleLength':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:243:37: error: 'RFM9X_20_REG_PREAMBLE_MSB' undeclared (first use in this function)
+  243 |         uint8_t msb = register_read(RFM9X_20_REG_PREAMBLE_MSB);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:244:37: error: 'RFM9X_21_REG_PREAMBLE_LSB' undeclared (first use in this function)
+  244 |         uint8_t lsb = register_read(RFM9X_21_REG_PREAMBLE_LSB);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:254:6: warning: conflicting types for 'setFrequency'; have 'void(uint32_t)' {aka 'void(long unsigned int)'}
+  254 | void setFrequency(uint32_t frequency)
+      |      ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:152:9: note: previous implicit declaration of 'setFrequency' with type 'void(uint32_t)' {aka 'void(long unsigned int)'}
+  152 |         setFrequency(915);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setFrequency':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:258:57: error: 'RFM9X_FXOSC' undeclared (first use in this function)
+  258 |         uint64_t frf = ((uint64_t) (frequency) << 19) / RFM9X_FXOSC;
+      |                                                         ^~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:260:24: error: 'RFM9X_06_REG_FRF_MSB' undeclared (first use in this function)
+  260 |         register_write(RFM9X_06_REG_FRF_MSB, (frf >> 16) & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:261:24: error: 'RFM9X_07_REG_FRF_MID' undeclared (first use in this function)
+  261 |         register_write(RFM9X_07_REG_FRF_MID, (frf >> 8) & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:262:24: error: 'RFM9X_08_REG_FRF_LSB' undeclared (first use in this function)
+  262 |         register_write(RFM9X_08_REG_FRF_LSB, frf & 0xff);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:268:10: error: conflicting types for 'getFrecuency'; have 'uint32_t()' {aka 'long unsigned int()'}
+  268 | uint32_t getFrecuency()
+      |          ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:153:44: note: previous implicit declaration of 'getFrecuency' with type 'int()'
+  153 |         printf("Frequency: %" PRIu32 "\n", getFrecuency());
+      |                                            ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getFrecuency':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:272:37: error: 'RFM9X_06_REG_FRF_MSB' undeclared (first use in this function)
+  272 |         uint8_t msb = register_read(RFM9X_06_REG_FRF_MSB);
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:273:37: error: 'RFM9X_07_REG_FRF_MID' undeclared (first use in this function)
+  273 |         uint8_t mid = register_read(RFM9X_07_REG_FRF_MID);
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:274:37: error: 'RFM9X_08_REG_FRF_LSB' undeclared (first use in this function)
+  274 |         uint8_t lsb = register_read(RFM9X_08_REG_FRF_LSB);
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:276:56: error: 'RFM9X_FXOSC' undeclared (first use in this function)
+  276 |         frequency = ((msb << 16) | (mid << 8) | lsb) * RFM9X_FXOSC / (1 << 19);
+      |                                                        ^~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:284:6: warning: conflicting types for 'setTxPower'; have 'void(int8_t)' {aka 'void(signed char)'}
+  284 | void setTxPower(int8_t power)
+      |      ^~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:146:9: note: previous implicit declaration of 'setTxPower' with type 'void(int8_t)' {aka 'void(signed char)'}
+  146 |         setTxPower(13);
+      |         ^~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setTxPower':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:293:24: error: 'RFM9X_09_REG_PA_CONFIG' undeclared (first use in this function)
+  293 |         register_write(RFM9X_09_REG_PA_CONFIG, PA_BOOST_PIN | (power - 2));
+      |                        ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:293:48: error: 'PA_BOOST_PIN' undeclared (first use in this function)
+  293 |         register_write(RFM9X_09_REG_PA_CONFIG, PA_BOOST_PIN | (power - 2));
+      |                                                ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getTxPower':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:301:45: error: 'RFM9X_09_REG_PA_CONFIG' undeclared (first use in this function)
+  301 |         uint8_t regPaConfig = register_read(RFM9X_09_REG_PA_CONFIG);
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:311:6: warning: conflicting types for 'setBandwidth'; have 'void(double)'
+  311 | void setBandwidth(double bandwidth)
+      |      ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:139:9: note: previous implicit declaration of 'setBandwidth' with type 'void(double)'
+  139 |         setBandwidth(125e3);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setBandwidth':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:314:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  314 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setImplicitHeaderMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:355:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  355 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:366:6: warning: conflicting types for 'setExplicitHeaderMode'; have 'void()'
+  366 | void setExplicitHeaderMode()
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:143:9: note: previous implicit declaration of 'setExplicitHeaderMode' with type 'void()'
+  143 |         setExplicitHeaderMode();
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setExplicitHeaderMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:368:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  368 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:381:6: warning: conflicting types for 'setSpreadingFactor'; have 'void(uint8_t)' {aka 'void(unsigned char)'}
+  381 | void setSpreadingFactor(uint8_t sf)
+      |      ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:141:9: note: previous implicit declaration of 'setSpreadingFactor' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+  141 |         setSpreadingFactor(7);
+      |         ^~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setSpreadingFactor':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:383:49: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  383 |         uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getSpreadingFactor':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:401:49: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  401 |         uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getSignalBandwidth':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:413:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  413 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:424:6: warning: conflicting types for 'setCodingRate'; have 'void(uint8_t)' {aka 'void(unsigned char)'}
+  424 | void setCodingRate(uint8_t denominator)
+      |      ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:140:9: note: previous implicit declaration of 'setCodingRate' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+  140 |         setCodingRate(5);
+      |         ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setCodingRate':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:426:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  426 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getCodingRate':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:449:49: error: 'RFM9X_1D_REG_MODEM_CONFIG1' undeclared (first use in this function)
+  449 |         uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:461:6: warning: conflicting types for 'enableCRC'; have 'void()'
+  461 | void enableCRC()
+      |      ^~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:142:9: note: previous implicit declaration of 'enableCRC' with type 'void()'
+  142 |         enableCRC();
+      |         ^~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'enableCRC':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:463:49: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  463 |         uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'disableCRC':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:476:49: error: 'RFM9X_1E_REG_MODEM_CONFIG2' undeclared (first use in this function)
+  476 |         uint8_t regModemConfig2 = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getRegOpMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:489:43: error: 'RFM9X_01_REG_OP_MODE' undeclared (first use in this function)
+  489 |         uint8_t regOpMode = register_read(RFM9X_01_REG_OP_MODE);
+      |                                           ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: At top level:
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:497:9: error: conflicting types for 'setRegOpMode'; have 'uint8_t(uint8_t)' {aka 'unsigned char(unsigned char)'}
+  497 | uint8_t setRegOpMode(uint8_t mode)
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:114:9: note: previous implicit declaration of 'setRegOpMode' with type 'int()'
+  114 |         setRegOpMode(RFM9X_MODE_SLEEP);
+      |         ^~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setRegOpMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:500:22: error: 'RFM9X_MODE_SLEEP' undeclared (first use in this function)
+  500 |                 case RFM9X_MODE_SLEEP:
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:501:22: error: 'RFM9X_MODE_STDBY' undeclared (first use in this function)
+  501 |                 case RFM9X_MODE_STDBY:
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:502:22: error: 'RFM9X_MODE_FSTX' undeclared (first use in this function)
+  502 |                 case RFM9X_MODE_FSTX:
+      |                      ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:503:22: error: 'RFM9X_MODE_TX' undeclared (first use in this function)
+  503 |                 case RFM9X_MODE_TX:
+      |                      ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:504:22: error: 'RFM9X_MODE_FSRX' undeclared (first use in this function)
+  504 |                 case RFM9X_MODE_FSRX:
+      |                      ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:505:22: error: 'RFM9X_MODE_RXCONTINUOUS' undeclared (first use in this function)
+  505 |                 case RFM9X_MODE_RXCONTINUOUS:
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:506:22: error: 'RFM9X_MODE_RXSINGLE' undeclared (first use in this function)
+  506 |                 case RFM9X_MODE_RXSINGLE:
+      |                      ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:507:40: error: 'RFM9X_01_REG_OP_MODE' undeclared (first use in this function)
+  507 |                         register_write(RFM9X_01_REG_OP_MODE, mode | RFM9X_LONG_RANGE_MODE);
+      |                                        ^~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:507:69: error: 'RFM9X_LONG_RANGE_MODE' undeclared (first use in this function)
+  507 |                         register_write(RFM9X_01_REG_OP_MODE, mode | RFM9X_LONG_RANGE_MODE);
+      |                                                                     ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'getCurrentOpMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:536:21: error: 'RFM9X_LONG_RANGE_MODE' undeclared (first use in this function)
+  536 |         if (mode == RFM9X_LONG_RANGE_MODE) {
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:541:30: error: 'RFM9X_MODE_SLEEP' undeclared (first use in this function)
+  541 |                         case RFM9X_MODE_SLEEP:
+      |                              ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:544:30: error: 'RFM9X_MODE_STDBY' undeclared (first use in this function)
+  544 |                         case RFM9X_MODE_STDBY:
+      |                              ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:547:30: error: 'RFM9X_MODE_FSTX' undeclared (first use in this function)
+  547 |                         case RFM9X_MODE_FSTX:
+      |                              ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:550:30: error: 'RFM9X_MODE_TX' undeclared (first use in this function)
+  550 |                         case RFM9X_MODE_TX:
+      |                              ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:553:30: error: 'RFM9X_MODE_FSRX' undeclared (first use in this function)
+  553 |                         case RFM9X_MODE_FSRX:
+      |                              ^~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:556:30: error: 'RFM9X_MODE_RXCONTINUOUS' undeclared (first use in this function)
+  556 |                         case RFM9X_MODE_RXCONTINUOUS:
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:559:30: error: 'RFM9X_MODE_RXSINGLE' undeclared (first use in this function)
+  559 |                         case RFM9X_MODE_RXSINGLE:
+      |                              ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'send':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:583:22: error: 'RFM9X_MODE_STDBY' undeclared (first use in this function)
+  583 |         setRegOpMode(RFM9X_MODE_STDBY);
+      |                      ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:587:24: error: 'RFM9X_0D_REG_FIFO_ADDR_PTR' undeclared (first use in this function)
+  587 |         register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, 0);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:590:24: error: 'RFM9X_00_REG_FIFO' undeclared (first use in this function)
+  590 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_TO);
+      |                        ^~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:590:43: error: 'RADIOHEAD_HEADER_TO' undeclared (first use in this function)
+  590 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_TO);
+      |                                           ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:591:43: error: 'RADIOHEAD_HEADER_FROM' undeclared (first use in this function)
+  591 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_FROM);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:592:43: error: 'RADIOHEAD_HEADER_ID' undeclared (first use in this function)
+  592 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_ID);
+      |                                           ^~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:593:43: error: 'RADIOHEAD_HEADER_FLAGS' undeclared (first use in this function)
+  593 |         register_write(RFM9X_00_REG_FIFO, RADIOHEAD_HEADER_FLAGS + identifier++);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:601:24: error: 'RFM9X_22_REG_PAYLOAD_LENGTH' undeclared (first use in this function)
+  601 |         register_write(RFM9X_22_REG_PAYLOAD_LENGTH, length + RFM9X_HEADER_LEN);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:601:62: error: 'RFM9X_HEADER_LEN' undeclared (first use in this function)
+  601 |         register_write(RFM9X_22_REG_PAYLOAD_LENGTH, length + RFM9X_HEADER_LEN);
+      |                                                              ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:607:22: error: 'RFM9X_MODE_TX' undeclared (first use in this function)
+  607 |         setRegOpMode(RFM9X_MODE_TX);
+      |                      ^~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:608:31: error: 'RFM9X_12_REG_IRQ_FLAGS' undeclared (first use in this function)
+  608 |         while ((register_read(RFM9X_12_REG_IRQ_FLAGS) & IRQ_TX_DONE_MASK) == 0) {
+      |                               ^~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:608:57: error: 'IRQ_TX_DONE_MASK' undeclared (first use in this function)
+  608 |         while ((register_read(RFM9X_12_REG_IRQ_FLAGS) & IRQ_TX_DONE_MASK) == 0) {
+      |                                                         ^~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'setRxMode':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:622:22: error: 'RFM9X_MODE_RXCONTINUOUS' undeclared (first use in this function)
+  622 |         setRegOpMode(RFM9X_MODE_RXCONTINUOUS);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:624:24: error: 'RFM9X_40_REG_DIO_MAPPING1' undeclared (first use in this function)
+  624 |         register_write(RFM9X_40_REG_DIO_MAPPING1, 0x00);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

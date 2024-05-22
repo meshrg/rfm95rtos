@@ -1,0 +1,9 @@
+CMake Error at /Users/fvalde/esp/esp-idf/tools/cmake/build.cmake:268 (message):
+  Failed to resolve component 'igrr__pa1010d'.
+Call Stack (most recent call first):
+  /Users/fvalde/esp/esp-idf/tools/cmake/build.cmake:310 (__build_resolve_and_add_req)
+  /Users/fvalde/esp/esp-idf/tools/cmake/build.cmake:599 (__build_expand_requirements)
+  /Users/fvalde/esp/esp-idf/tools/cmake/project.cmake:605 (idf_build_process)
+  CMakeLists.txt:9 (project)
+
+

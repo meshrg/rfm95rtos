@@ -1,0 +1,23 @@
+CMake Error at /Users/fvalde/esp/esp-idf/tools/cmake/build.cmake:544 (message):
+  ERROR: A problem was found in the manifest file
+  /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/main/idf_component.yml:
+
+
+  Version specifications for "path" are invalid.
+
+
+
+  SUGGESTION: This component may be using a newer version of the component
+  manager.
+
+  You can try to update the component manager by running:
+
+      /Users/fvalde/.espressif/python_env/idf5.3_py3.11_env/bin/python -m pip install --upgrade idf-component-manager
+
+  
+
+Call Stack (most recent call first):
+  /Users/fvalde/esp/esp-idf/tools/cmake/project.cmake:605 (idf_build_process)
+  CMakeLists.txt:9 (project)
+
+

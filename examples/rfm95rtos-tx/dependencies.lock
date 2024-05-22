@@ -1,0 +1,15 @@
+dependencies:
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.3.0
+  rfm95rtos:
+    component_hash: null
+    source:
+      path: /Users/fvalde/projects/noxwork/rfm95rtos
+      type: local
+    version: '*'
+manifest_hash: c3784e71f25a79338d56d91bb02eaab09176494b3ac3c0da6e74f52b28222833
+target: esp32
+version: 1.0.0

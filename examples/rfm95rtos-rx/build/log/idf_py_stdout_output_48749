@@ -1,0 +1,47 @@
+[1/12] Performing build step for 'bootloader'
+[1/1] cd /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/esp-idf/esptool_py && /Users/fvalde/.espressif/python_env/idf5.3_py3.11_env/bin/python /Users/fvalde/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/bootloader.bin
+Bootloader binary size 0x6810 bytes. 0x7f0 bytes (7%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Completed 'bootloader'
+[4/12] Building C object esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj
+FAILED: esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj 
+/Users/fvalde/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.3-dev-422-ga7fbf452fa\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/config -I/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/include -I/Users/fvalde/esp/esp-idf/components/newlib/platform_include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include -I/Users/fvalde/esp/esp-idf/components/freertos/config/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/fvalde/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/fvalde/esp/esp-idf/components/freertos/esp_additions/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/Users/fvalde/esp/esp-idf/components/esp_hw_support/port/esp32/private_include -I/Users/fvalde/esp/esp-idf/components/heap/include -I/Users/fvalde/esp/esp-idf/components/log/include -I/Users/fvalde/esp/esp-idf/components/soc/include -I/Users/fvalde/esp/esp-idf/components/soc/esp32 -I/Users/fvalde/esp/esp-idf/components/soc/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/platform_port/include -I/Users/fvalde/esp/esp-idf/components/hal/esp32/include -I/Users/fvalde/esp/esp-idf/components/hal/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include -I/Users/fvalde/esp/esp-idf/components/esp_rom/include/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_rom/esp32 -I/Users/fvalde/esp/esp-idf/components/esp_common/include -I/Users/fvalde/esp/esp-idf/components/esp_system/include -I/Users/fvalde/esp/esp-idf/components/esp_system/port/soc -I/Users/fvalde/esp/esp-idf/components/esp_system/port/include/private -I/Users/fvalde/esp/esp-idf/components/xtensa/esp32/include -I/Users/fvalde/esp/esp-idf/components/xtensa/include -I/Users/fvalde/esp/esp-idf/components/xtensa/deprecated_include -I/Users/fvalde/esp/esp-idf/components/driver/include -I/Users/fvalde/esp/esp-idf/components/driver/deprecated -I/Users/fvalde/esp/esp-idf/components/driver/analog_comparator/include -I/Users/fvalde/esp/esp-idf/components/driver/dac/include -I/Users/fvalde/esp/esp-idf/components/driver/i2c/include -I/Users/fvalde/esp/esp-idf/components/driver/i2s/include -I/Users/fvalde/esp/esp-idf/components/driver/ledc/include -I/Users/fvalde/esp/esp-idf/components/driver/parlio/include -I/Users/fvalde/esp/esp-idf/components/driver/rmt/include -I/Users/fvalde/esp/esp-idf/components/driver/sdio_slave/include -I/Users/fvalde/esp/esp-idf/components/driver/sdspi/include -I/Users/fvalde/esp/esp-idf/components/driver/sigma_delta/include -I/Users/fvalde/esp/esp-idf/components/driver/temperature_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/include -I/Users/fvalde/esp/esp-idf/components/driver/twai/include -I/Users/fvalde/esp/esp-idf/components/driver/uart/include -I/Users/fvalde/esp/esp-idf/components/driver/usb_serial_jtag/include -I/Users/fvalde/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/Users/fvalde/esp/esp-idf/components/esp_pm/include -I/Users/fvalde/esp/esp-idf/components/esp_ringbuf/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gpio/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_pcnt/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_gptimer/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_spi/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_mcpwm/include -I/Users/fvalde/esp/esp-idf/components/esp_driver_sdmmc/include -I/Users/fvalde/esp/esp-idf/components/sdmmc/include -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx=. -fmacro-prefix-map=/Users/fvalde/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj -MF esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj.d -o esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj -c /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'spi_init':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:50:24: error: 'GPIO_NUM_RST' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   50 |         gpio_reset_pin(GPIO_NUM_RST);
+      |                        ^~~~~~~~~~~~
+      |                        GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:50:24: note: each undeclared identifier is reported only once for each function it appears in
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:54:24: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+   54 |         gpio_reset_pin(GPIO_NUM_CS);
+      |                        ^~~~~~~~~~~
+      |                        GPIO_NUM_39
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:59:26: error: 'GPIO_NUM_MISO' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   59 |         .miso_io_num   = GPIO_NUM_MISO,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:60:26: error: 'GPIO_NUM_MOSI' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   60 |         .mosi_io_num   = GPIO_NUM_MOSI,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:61:26: error: 'GPIO_NUM_SCLK' undeclared (first use in this function); did you mean 'GPIO_NUM_NC'?
+   61 |         .sclk_io_num   = GPIO_NUM_SCLK,
+      |                          ^~~~~~~~~~~~~
+      |                          GPIO_NUM_NC
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'reset_radio':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:95:24: error: 'GPIO_NUM_RST' undeclared (first use in this function); did you mean 'GPIO_NUM_MAX'?
+   95 |         gpio_set_level(GPIO_NUM_RST, 0);
+      |                        ^~~~~~~~~~~~
+      |                        GPIO_NUM_MAX
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'register_read':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:198:19: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+  198 |    gpio_set_level(GPIO_NUM_CS, 0);
+      |                   ^~~~~~~~~~~
+      |                   GPIO_NUM_39
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c: In function 'register_write':
+/Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/rfm95rtos.c:219:24: error: 'GPIO_NUM_CS' undeclared (first use in this function); did you mean 'GPIO_NUM_39'?
+  219 |         gpio_set_level(GPIO_NUM_CS, 0);
+      |                        ^~~~~~~~~~~
+      |                        GPIO_NUM_39
+[5/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj
+ninja: build stopped: subcommand failed.

@@ -1,0 +1,13 @@
+description: RFM95/96/97/98(W) LoRa modem driver for ESP-IDF
+
+url: https://github.com/meshrg/rfm95rtos
+issues: https://github.com/meshrg/rfm95rtos/issues
+documentation: https://github.com/meshrg/rfm95rtos/tree/main/README.md
+repository: https://github.com/meshrg/rfm95rtos.git
+
+maintainers:
+  - "Fernando Valderrabano R <fernando.valderrabano@uaz.mx>"
+  - "Viktor Ivan Rodriguez Abdala <abdala@uaz.mx>"
+
+dependencies:
+  idf: ">=4.4.0"

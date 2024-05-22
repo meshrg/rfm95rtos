@@ -1,0 +1,20 @@
+[1/12] Performing build step for 'bootloader'
+[1/1] cd /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/esp-idf/esptool_py && /Users/fvalde/.espressif/python_env/idf5.3_py3.11_env/bin/python /Users/fvalde/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/bootloader/bootloader.bin
+Bootloader binary size 0x6810 bytes. 0x7f0 bytes (7%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Completed 'bootloader'
+[4/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/rfm95rtos-rx.c.obj
+[5/12] Building C object esp-idf/rfm95rtos/CMakeFiles/__idf_rfm95rtos.dir/rfm95rtos.c.obj
+[6/12] Linking C static library esp-idf/rfm95rtos/librfm95rtos.a
+[7/12] Linking C static library esp-idf/main/libmain.a
+[8/12] Generating ld/sections.ld
+[9/12] Building C object CMakeFiles/rfm95rtos-rx.elf.dir/project_elf_src_esp32.c.obj
+[10/12] Linking CXX executable rfm95rtos-rx.elf
+[11/12] Generating binary image from built executable
+esptool.py v4.7.dev3
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/rfm95rtos-rx.bin
+[12/12] cd /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/esp-idf/esptool_py && /Users/fvalde/.espressif/python_env/idf5.3_py3.11_env/bin/python /Users/fvalde/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/partition_table/partition-table.bin /Users/fvalde/projects/noxwork/rfm95rtos/rfm95rtos/examples/rfm95rtos-rx/build/rfm95rtos-rx.bin
+rfm95rtos-rx.bin binary size 0x2ebf0 bytes. Smallest app partition is 0x100000 bytes. 0xd1410 bytes (82%) free.

@@ -1,0 +1,4 @@
+dependencies:
+  rfm95rtos:
+    version: "*"
+    override_path: '../../../'
