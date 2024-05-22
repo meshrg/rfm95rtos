@@ -10,7 +10,7 @@
  * - GPIO_NUM_G0   (27)
  *
  * Based on the RFM9x datasheet, the SX1276/77/78/79 datasheet and the RadioHead library.
- * Uses the RadioHead packet format compatible with the RadioHead Arduino library.
+ * Uses the RadioHead packet format compatible with the RadioHead Arduino library and CircuitPython RFM9X.
  *
  * Posgrado en Ingenieria para la Innovacion Tecnologica (PIIT)
  * Postgraduate in Engineering for Technological Innovation
@@ -271,22 +271,24 @@ void radio_init(void)
 	setRegOpMode(RFM9X_MODE_STDBY);
 	vTaskDelay(pdMS_TO_TICKS(10));
 
-	// settings compatible with RadioHead
-	// mode Bw125Cr45Sf128 with AGC enabled
-	// BW = 125kHz, CR 4/5, SF = 128chips/symbol (SF7)
+	/*
+	 * set settings compatible with RadioHead
+	 * mode Bw125Cr45Sf128
+	 * BW = 125kHz
+	 * CR 4/5,
+	 * SF = 128chips/symbol (SF7),
+	 * CRC enabled
+	 * explicit header mode
+	 * at the end, the registers should be:
+	 * RFM9X_1E_REG_MODEM_CONFIG1 = 0x72
+	 * RFM9X_1E_REG_MODEM_CONFIG2 = 0x74
+	 * RFM9X_1E_REG_MODEM_CONFIG3 = 0x04
+	 */
 	setBandwidth(125e3);
 	setCodingRate(5);
 	setSpreadingFactor(7);
 	enableCRC();
-	setImplicitHeaderMode();
-
-	// { 0x72,   0x74,    0x04}
-	uint8_t Bw125Cr45Sf128[] = {0x72, 0x74, 0x04};
-
-	// 1110010
-	register_write(RFM9X_1D_REG_MODEM_CONFIG1, Bw125Cr45Sf128[0]);
-	// register_write(RFM9X_1E_REG_MODEM_CONFIG2, Bw125Cr45Sf128[1]);
-	// register_write(RFM9X_26_REG_MODEM_CONFIG3, Bw125Cr45Sf128[2]);
+	setExplicitHeaderMode();
 
 	// the default is 13 dBm
 	setTxPower(13);
@@ -295,9 +297,16 @@ void radio_init(void)
 	setPreambleLength(8);
 
 	// set frequency = 915 MHz
-	// setFrequency(915000000);
 	setFrequency(915);
-	// printf("Frequency: %" PRIu32 "\n", getFrecuency());
+	printf("Frequency: %" PRIu32 "\n", getFrecuency());
+
+	// debbuging
+	uint8_t current_reg = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
+	printf("Current register 1 value: 0x%x\n", current_reg);
+	current_reg = register_read(RFM9X_1E_REG_MODEM_CONFIG2);
+	printf("Current register 2 value: 0x%x\n", current_reg);
+	current_reg = register_read(RFM9X_26_REG_MODEM_CONFIG3);
+	printf("Current register 3 value: 0x%x\n", current_reg);
 }
 
 /**
@@ -477,8 +486,11 @@ void setBandwidth(double bandwidth)
 		return;
 	}
 
-	// Bw are in bits 7-4
-	regModemConfig1 = (regModemConfig1 & 0x0f) | (signal_bw << 4);
+	// clear the bits 7-4
+	regModemConfig1 = regModemConfig1 & 0x0f;
+
+	// set the new value
+	regModemConfig1 |= (signal_bw << 4);
 
 	register_write(RFM9X_1D_REG_MODEM_CONFIG1, regModemConfig1);
 }
@@ -555,18 +567,22 @@ uint8_t getSignalBandwidth()
 
 /*
  * Set the coding rate denominator (4/x)
+ * bits 3-1 in register RFM9X_1D_REG_MODEM_CONFIG1
 */
 void setCodingRate(uint8_t denominator)
 {
 	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
 
-	if (denominator < 5 || denominator > 8) {
-		printf("Invalid denominator\n");
-		return;
+	// fallback to a valid value
+	if (denominator < 5) {
+		denominator = 5;
+	} else if (denominator > 8) {
+		denominator = 8;
 	}
 
 	// CR are in bits 3-1 with an offset of 4
-	// 0xf1 is used to clear the bits 3-1
+	// 0xf1 is used to clear the bits 3-1 (11110001)
+	// set the new value, multiply by 2 to get the denominator
 	regModemConfig1 = (regModemConfig1 & 0xf1) | ((denominator - 4) << 1);
 
 	register_write(RFM9X_1D_REG_MODEM_CONFIG1, regModemConfig1);
@@ -574,18 +590,21 @@ void setCodingRate(uint8_t denominator)
 
 /*
  * Get the coding rate denominator (4/x)
+ * bits 3-1 in register RFM9X_1D_REG_MODEM_CONFIG1
 */
 uint8_t getCodingRate()
 {
 	uint8_t regModemConfig1 = register_read(RFM9X_1D_REG_MODEM_CONFIG1);
 
-	uint8_t denominator = (regModemConfig1 >> 1) & 0x07;
+	// clear all bits except 1-3, then shift to the right and add 4
+	uint8_t denominator = ((regModemConfig1 & 0x0e) >> 1) + 4;
 
-	return denominator + 4;
+	return denominator;
 }
 
 /*
  * Enable CRC
+ * bit 2 in register RFM9X_1E_REG_MODEM_CONFIG2
 */
 void enableCRC()
 {
@@ -705,6 +724,9 @@ void send(char *data)
 	uint8_t length = strlen(data);
 	uint8_t identifier = 1;
 
+	// debbuging
+	printf("The length of the data is: %d\n", length);
+
 	// set standby mode
 	setRegOpMode(RFM9X_MODE_STDBY);
 	vTaskDelay(pdMS_TO_TICKS(10));
@@ -725,6 +747,9 @@ void send(char *data)
 
 	// set the length of the packet
 	register_write(RFM9X_22_REG_PAYLOAD_LENGTH, length + RFM9X_HEADER_LEN);
+
+	// debbuging
+	printf("packet length: %d\n", length + RFM9X_HEADER_LEN);
 
 	// set TX mode
 	setRegOpMode(RFM9X_MODE_TX);
