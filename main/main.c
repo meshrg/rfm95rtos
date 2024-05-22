@@ -25,7 +25,8 @@
  *  - add more comments and function documentation
  *
  *
- * Fernando Valderrabano (fernando.valderrabano@uaz.mx)
+ * Fernando Valderrabano R (fernando.valderrabano@uaz.mx | fdo.valderrabano@gmail.com )
+ *
 */
 #include "esp_log.h"
 #include <string.h>
@@ -135,6 +136,8 @@
 #define RADIOHEAD_HEADER_ID 					0xff
 #define RADIOHEAD_HEADER_FLAGS 					0x00
 #define IRQ_TX_DONE_MASK 						0x08
+#define IRQ_RX_DONE_MASK                        0x40
+#define MAX_PAYLOAD_LENGTH 						255 - RFM9X_HEADER_LEN
 
 // initialize SPI and radio functions
 esp_err_t spi_init(void);
@@ -165,6 +168,7 @@ void enableCRC();
 void disableCRC();
 void send(char *data);
 void waitPacketSent();
+void setRxMode();
 
 // operation mode functions
 uint8_t getRegOpMode();
@@ -185,7 +189,63 @@ void app_main(void)
 	printf("Set tx power to 23 dBm\n");
 	setTxPower(23);
 
-	send("Hello LoRa World!");
+	// receiver example
+	int i = 0;
+	uint8_t messageBuffer[MAX_PAYLOAD_LENGTH];
+
+	while (1) {
+		setRxMode();
+		vTaskDelay(pdMS_TO_TICKS(1000));
+
+		uint8_t irq_flags = register_read(RFM9X_12_REG_IRQ_FLAGS);
+
+		if (irq_flags & IRQ_RX_DONE_MASK) {
+			printf("Packet received\n");
+
+			// check the CrcOnPayload flag
+			uint8_t regHopChannel = register_read(RFM9X_1C_REG_HOP_CHANNEL);
+
+			// CRC Information extracted from the received packet header
+			if (regHopChannel & 0x40) {
+				printf("Header indicates CRC on\n");
+				// check PayloadCrcError on the 6th bit of irq_flags
+				if (irq_flags & 0x20) {
+					printf("CRC error\n");
+				}
+			} else {
+				printf("Header indicates CRC off\n");
+			}
+
+			// check the validHeader flag
+			if (irq_flags & 0x10) {
+				printf("Valid header\n");
+			} else {
+				printf("Invalid header\n");
+				continue;
+			}
+
+			// RegRxNbBytes indicates the number of bytes that have been received
+			uint8_t length = register_read(RFM9X_13_REG_RX_NB_BYTES);
+			printf("Length: %d\n", length);
+
+			// reset the fifo pointer to the beginning of the packet
+			register_write(RFM9X_0D_REG_FIFO_ADDR_PTR, register_read(RFM9X_25_REG_FIFO_RX_BYTE_ADDR));
+
+			// read the packet
+			for (i = 0; i < length; i++) {
+				messageBuffer[i] = register_read(RFM9X_00_REG_FIFO);
+			}
+
+			// print the message
+			printf("Message: %s\n", messageBuffer);
+
+			// send("And hello back to you");
+
+			// clear the RX_DONE and IRQ flags
+			register_write(RFM9X_12_REG_IRQ_FLAGS, 0xff);
+		}
+	}
+
 }
 
 /*
@@ -263,7 +323,7 @@ void radio_init(void)
 	setRegOpMode(RFM9X_MODE_SLEEP);
 	vTaskDelay(pdMS_TO_TICKS(10));
 
-    // set up FIFO
+    // set up FIFO to use the 256 bytes
 	register_write(RFM9X_0E_REG_FIFO_TX_BASE_ADDR, 0);
 	register_write(RFM9X_0F_REG_FIFO_RX_BASE_ADDR, 0);
 
@@ -273,12 +333,13 @@ void radio_init(void)
 
 	/*
 	 * set settings compatible with RadioHead
-	 * mode Bw125Cr45Sf128
+	 * mode Bw125Cr45Sf128 wich is:
 	 * BW = 125kHz
 	 * CR 4/5,
 	 * SF = 128chips/symbol (SF7),
 	 * CRC enabled
 	 * explicit header mode
+	 *
 	 * at the end, the registers should be:
 	 * RFM9X_1E_REG_MODEM_CONFIG1 = 0x72
 	 * RFM9X_1E_REG_MODEM_CONFIG2 = 0x74
@@ -760,4 +821,11 @@ void send(char *data)
 	// clear the TX_DONE flag
 	register_write(RFM9X_12_REG_IRQ_FLAGS, IRQ_TX_DONE_MASK);
 	printf("\npacket sent\n");
+}
+
+void setRxMode()
+{
+	setRegOpMode(RFM9X_MODE_RXCONTINUOUS);
+	// Interrupt on RxDone
+	register_write(RFM9X_40_REG_DIO_MAPPING1, 0x00);
 }
