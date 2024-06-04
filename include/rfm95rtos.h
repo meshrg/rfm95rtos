@@ -1,4 +1,19 @@
 
+/**
+ * @file rfm95rtos.h
+ *
+ * Maestría en Ingeniería para la Innovación Tecnológica (MIIT)
+ * Masters in Engineering for Technological Innovation
+ * Specialization: IoT and Embedded Systems.
+ * Project: LoRaWAN Node with ESP32, RFM9x and FreeRTOS
+ *
+ * UAZ. Universidad Autonoma de Zacatecas, Mexico.
+ *
+ * Director: Dr. Viktor Iván Rodríguez Abdalá (abdala@uaz.mx)
+ * Student: Fernando Valderrábano Reyes (fernando.valderrabano@uaz.mx)
+ *
+ **/
+
 #include "esp_err.h"
 #include "driver/i2c.h"
 

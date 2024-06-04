@@ -8,20 +8,24 @@
  * - GPIO_NUM_CS   ( 5)
  * - GPIO_NUM_RST  (13)
  * - GPIO_NUM_G0   (27)
+ * - GPIO_NUM_G1   (26)
  *
  * Based on the RFM9x datasheet, the SX1276/77/78/79 datasheet and the RadioHead library.
- * Uses the RadioHead packet format compatible with the RadioHead Arduino library and CircuitPython RFM9X.
+ * Uses the RadioHead packet format compatible with the RadioHead Arduino library
+ * and CircuitPython RFM9X.
  *
- * Posgrado en Ingenieria para la Innovacion Tecnologica (PIIT)
- * Postgraduate in Engineering for Technological Innovation
- * Project: LoRa Node with ESP32, RFM9x and FreeRTOS
+ * Maestría en Ingenieria para la Innovación Tecnológica (MIIT)
+ * Masters in Engineering for Technological Innovation
+ * Specialization: IoT and Embedded Systems.
+ * Project: LoRaWAN Node with ESP32, RFM9x and FreeRTOS
  *
  * UAZ. Universidad Autonoma de Zacatecas, Mexico.
  *
- *
- * Fernando Valderrabano R (fernando.valderrabano@uaz.mx)
+ * Director: Dr. Viktor Ivan Rodriguez Abdalá (abdala@uaz.mx)
+ * Student: Fernando Valderrábano Reyes (fernando.valderrabano@uaz.mx)
  *
 **/
+
 #include <stdio.h>
 #include "esp_log.h"
 #include "esp_err.h"
